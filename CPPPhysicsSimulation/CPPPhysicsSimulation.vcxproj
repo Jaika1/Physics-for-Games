@@ -177,10 +177,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\PhysicsGame.cpp" />
+    <ClCompile Include="src\PhysicsObject.cpp" />
     <ClCompile Include="src\PhysicsScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\PhysicsGame.h" />
+    <ClInclude Include="src\PhysicsObject.h" />
     <ClInclude Include="src\PhysicsScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
