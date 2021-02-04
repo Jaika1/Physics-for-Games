@@ -10,19 +10,19 @@ public:
 	PhysicsScene();
 	~PhysicsScene();
 
-	void AddActor(PhysicsObject* actor);
-	void RemoveActor(PhysicsObject* actor);
-	void Update(float deltaTime);
-	void Draw();
+	void addActor(PhysicsObject* actor);
+	void removeActor(PhysicsObject* actor);
+	void update(float deltaTime);
+	void draw();
 
-	void SetGravity(const glm::vec2 grav) { gravity = grav; }
-	glm::vec2 GetGravity() const { return gravity; }
+	void setGravity(const glm::vec2 gravity) { m_gravity = gravity; }
+	glm::vec2 getGravity() const { return m_gravity; }
 
-	void SetTimeStep(const float tStep) { timeStep = tStep; }
-	float GetTimeStep() const { return timeStep; }
+	void setTimeStep(const float timeStep) { m_timeStep = timeStep; }
+	float getTimeStep() const { return m_timeStep; }
 
 protected:
-	glm::vec2 gravity;
-	float timeStep;
-	std::vector<PhysicsObject*> actors;
+	glm::vec2 m_gravity;
+	float m_timeStep;
+	std::vector<PhysicsObject*> m_actors;
 };

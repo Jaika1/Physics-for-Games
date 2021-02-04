@@ -2,9 +2,9 @@
 
 int main()
 {
-	gameInstance = new PhysicsGame();
-	gameInstance->run("Yet Another Physics Simulation", 1280, 720, false);
-	delete gameInstance;
+	GameInstance = new PhysicsGame();
+	GameInstance->run("Yet Another Physics Simulation", 1280, 720, false);
+	delete GameInstance;
 
 	return 0;
 }

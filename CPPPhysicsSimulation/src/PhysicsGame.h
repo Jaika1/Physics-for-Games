@@ -13,11 +13,11 @@ public:
 	virtual void shutdown();
 	virtual void update(float deltaTime);
 	virtual void draw();
-	void ChangeScene(PhysicsScene* scene);
+	void changeScene(PhysicsScene* scene);
 private:
-	aie::Renderer2D* renderer = nullptr;
-	aie::Font* font = nullptr;
-	PhysicsScene* currentScene = nullptr;
+	aie::Renderer2D* m_renderer = nullptr;
+	aie::Font* m_font = nullptr;
+	PhysicsScene* m_currentScene = nullptr;
 };
 
-extern PhysicsGame* gameInstance;
+extern PhysicsGame* GameInstance;

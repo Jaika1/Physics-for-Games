@@ -2,52 +2,52 @@
 #include <glm.hpp>
 #include "PhysicsObject.h"
 
-PhysicsScene::PhysicsScene() : gravity({ 0.0f, 0.0f }), timeStep(0.01f)
+PhysicsScene::PhysicsScene() : m_gravity(glm::vec2(0.0f, 0.0f)), m_timeStep(0.01f)
 {
 
 }
 
 PhysicsScene::~PhysicsScene()
 {
-	for (auto a : actors) {
+	for (auto a : m_actors) {
 		delete a;
 	}
 
-	actors.clear();
+	m_actors.clear();
 }
 
-void PhysicsScene::AddActor(PhysicsObject* actor)
+void PhysicsScene::addActor(PhysicsObject* actor)
 {
-	actors.push_back(actor);
+	m_actors.push_back(actor);
 }
 
-void PhysicsScene::RemoveActor(PhysicsObject* actor)
+void PhysicsScene::removeActor(PhysicsObject* actor)
 {
-	auto a = std::find(actors.begin(), actors.end(), actor);
-	actors.erase(a);
+	auto a = std::find(m_actors.begin(), m_actors.end(), actor);
+	m_actors.erase(a);
 	delete* a;
 }
 
-void PhysicsScene::Update(float deltaTime)
+void PhysicsScene::update(float deltaTime)
 {
 	static float timePassed = 0.0f;
 	timePassed += deltaTime;
 
-	while (timePassed >= timeStep)
+	while (timePassed >= m_timeStep)
 	{
-		for (auto a : actors)
+		for (auto a : m_actors)
 		{
-			a->FixedUpdate(gravity, timeStep);
+			a->fixedUpdate(m_gravity, m_timeStep);
 		}
 
-		timePassed -= timeStep;
+		timePassed -= m_timeStep;
 	}
 }
 
-void PhysicsScene::Draw()
+void PhysicsScene::draw()
 {
-	for (auto a : actors)
+	for (auto a : m_actors)
 	{
-		a->Draw();
+		a->draw();
 	}
 }
