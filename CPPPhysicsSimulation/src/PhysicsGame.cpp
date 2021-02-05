@@ -3,6 +3,8 @@
 #include <Font.h>
 #include <stdio.h>
 #include <Gizmos.h>
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
 
 using namespace aie;
 
@@ -28,8 +30,10 @@ void PhysicsGame::shutdown() {
 }
 
 void PhysicsGame::update(float deltaTime) {
+	aie::Gizmos::clear();
 	//Update the current scene
 	m_currentScene->update(deltaTime);
+	m_currentScene->draw();
 }
 
 void PhysicsGame::draw() {
@@ -37,9 +41,9 @@ void PhysicsGame::draw() {
 	clearScreen();
 
 	m_renderer->begin();
-	//Update the current scene
-	m_currentScene->draw();
 
+	static float aspectRatio = 16.0f / 9.0f;
+	aie::Gizmos::draw2D(glm::ortho<float>(-100, 100, -100/aspectRatio, 100/aspectRatio, -1.0f, 1.0f));
 
 	//Display current FPS
 	char fps[32];
