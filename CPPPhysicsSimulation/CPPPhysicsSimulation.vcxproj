@@ -176,14 +176,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Box.cpp" />
     <ClCompile Include="src\PhysicsGame.cpp" />
     <ClCompile Include="src\PhysicsObject.cpp" />
     <ClCompile Include="src\PhysicsScene.cpp" />
+    <ClCompile Include="src\Plane.cpp" />
+    <ClCompile Include="src\RigidBody.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Box.h" />
     <ClInclude Include="src\PhysicsGame.h" />
     <ClInclude Include="src\PhysicsObject.h" />
     <ClInclude Include="src\PhysicsScene.h" />
+    <ClInclude Include="src\Plane.h" />
+    <ClInclude Include="src\RigidBody.h" />
+    <ClInclude Include="src\Sphere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

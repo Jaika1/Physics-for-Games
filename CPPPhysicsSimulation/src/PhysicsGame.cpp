@@ -5,8 +5,11 @@
 #include <Gizmos.h>
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
+#include "Sphere.h"
+#include <Input.h>
 
 using namespace aie;
+using namespace glm;
 
 PhysicsGame* GameInstance = nullptr;
 
@@ -18,9 +21,12 @@ PhysicsGame::~PhysicsGame() {
 bool PhysicsGame::startup() {
 	aie::Gizmos::create(255u, 255u, 65535u, 65535u);
 
-	changeScene(new PhysicsScene());
+	m_currentScene = new PhysicsScene();
 	m_renderer = new Renderer2D();
 	m_font = new aie::Font("./ext/fonts/consolas.ttf", 32);
+
+	m_currentScene->addActor(new Sphere(vec2(-4, 0), vec2(0, 0), 3.0f, 1.0f, vec4(1, 0, 0, 1)));
+	m_currentScene->addActor(new Sphere(vec2(4, 0), vec2(-6, 0), 3.0f, 1.0f, vec4(0, 1, 0, 1)));
 
 	return true;
 }
@@ -31,6 +37,7 @@ void PhysicsGame::shutdown() {
 
 void PhysicsGame::update(float deltaTime) {
 	aie::Gizmos::clear();
+
 	//Update the current scene
 	m_currentScene->update(deltaTime);
 	m_currentScene->draw();
