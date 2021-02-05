@@ -25,5 +25,12 @@ public:
 	static bool checkCollision(PhysicsObject* actor1, PhysicsObject* actor2);
 private:
 	static collisionCheck_t collisionCheckFunctionArray[];
+
+	//Plane & obj
+	static bool plane2Plane(PhysicsObject* actor1, PhysicsObject* actor2);
+	static bool plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2);
+
+	//Sphere & obj
+	static bool sphere2Plane(PhysicsObject* actor1, PhysicsObject* actor2);
 	static bool sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2);
 };
