@@ -6,6 +6,7 @@
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include "Sphere.h"
+#include "Plane.h"
 #include <Input.h>
 
 using namespace aie;
@@ -25,8 +26,11 @@ bool PhysicsGame::startup() {
 	m_renderer = new Renderer2D();
 	m_font = new aie::Font("./ext/fonts/consolas.ttf", 32);
 
-	m_currentScene->addActor(new Sphere(vec2(-4, 0), vec2(0, 0), 3.0f, 1.0f, vec4(1, 0, 0, 1)));
-	m_currentScene->addActor(new Sphere(vec2(4, 0), vec2(-6, 0), 3.0f, 1.0f, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Sphere(vec2(0, 0), vec2(0, 0), 3.0f, 1.0f, vec4(1, 0, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(0, 1), -50, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(0, -1), -50, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(1, 0), -90, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(-1, 0), -90, vec4(0, 1, 0, 1)));
 
 	return true;
 }

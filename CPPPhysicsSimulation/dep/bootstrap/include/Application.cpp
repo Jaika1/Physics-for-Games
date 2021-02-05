@@ -70,8 +70,6 @@ void Application::run(const char* title, int width, int height, bool fullscreen)
 	if (createWindow(title,width,height, fullscreen) &&
 		startup()) {
 
-		setVSync(false);
-
 		// variables for timing
 		double prevTime = glfwGetTime();
 		double currTime = 0;
@@ -85,6 +83,9 @@ void Application::run(const char* title, int width, int height, bool fullscreen)
 			// update delta time
 			currTime = glfwGetTime();
 			deltaTime = currTime - prevTime;
+			if (deltaTime > 0.1f)
+				deltaTime = 0.1f;
+
 			prevTime = currTime;
 
 			// clear input

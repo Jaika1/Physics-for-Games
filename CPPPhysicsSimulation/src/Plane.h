@@ -4,7 +4,18 @@ class Plane :
 	public PhysicsObject
 {
 public:
-	glm::vec2 Normal;
-	float OriginDistance;
+	Plane(glm::vec2 normal, float distanceToOrigin, glm::vec4 colour);
+
+	virtual void fixedUpdate(glm::vec2 gravity, float timeStep);
+	virtual void draw();
+	virtual void resetPosition();
+
+	glm::vec2 getNormal() { return m_normal; }
+	float getDistance() { return m_distanceToOrigin; }
+
+protected:
+	glm::vec2 m_normal;
+	glm::vec4 m_colour;
+	float m_distanceToOrigin;
 };
 
