@@ -43,7 +43,7 @@ public:
 	/// <param name="timeStep">The length of a time-step.</param>
 	virtual void fixedUpdate(glm::vec2 gravity, float timeStep) = 0;
 	/// <summary>
-	/// Draws the object in question. Must be overriden.
+	/// Queues the object in question for drawing. Must be overriden.
 	/// </summary>
 	virtual void draw() = 0;
 	/// <summary>

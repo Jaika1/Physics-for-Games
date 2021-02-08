@@ -1,5 +1,9 @@
 #pragma once
 #include "PhysicsObject.h"
+
+/// <summary>
+/// A flat, infinitely long 2D surface that can interract with other objects.
+/// </summary>
 class Plane :
 	public PhysicsObject
 {
