@@ -35,6 +35,11 @@ public:
 	/// </summary>
 	/// <param name="scene">A pointer to the new scene to switch to.</param>
 	void changeScene(PhysicsScene* scene);
+	/// <summary>
+	/// Returns the current scene (if any is loaded).
+	/// </summary>
+	/// <param name="scene">The current scene being used by the game.</param>
+	const PhysicsScene getScene();
 private:
 	/// <summary>
 	/// A pointer to the renderer used to display stuff on-screen.

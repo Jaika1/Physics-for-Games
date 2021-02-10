@@ -8,6 +8,7 @@
 #include "Sphere.h"
 #include "Plane.h"
 #include <Input.h>
+#include <time.h>
 
 using namespace aie;
 using namespace glm;
@@ -30,12 +31,19 @@ bool PhysicsGame::startup() {
 	m_renderer = new Renderer2D();
 	m_font = new aie::Font("./ext/fonts/consolas.ttf", 32);
 
+	srand(time(nullptr));
+
 	// Adding a bunch of actors to the scene for testing purposes.
-	m_currentScene->addActor(new Sphere(vec2(0, 0), vec2(0, 0), 3.0f, 1.0f, vec4(1, 0, 0, 1)));
-	m_currentScene->addActor(new Plane(vec2(0, 1), -50, vec4(0, 1, 0, 1)));
-	m_currentScene->addActor(new Plane(vec2(0, -1), -50, vec4(0, 1, 0, 1)));
-	m_currentScene->addActor(new Plane(vec2(1, 0), -90, vec4(0, 1, 0, 1)));
-	m_currentScene->addActor(new Plane(vec2(-1, 0), -90, vec4(0, 1, 0, 1)));
+	for (int i = 0; i < 3; ++i) {
+		m_currentScene->addActor(new Sphere(vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f), vec2((rand() / (RAND_MAX / 100.0f)) - 50.0f, (rand() / (RAND_MAX / 100.0f)) - 50.0f), (rand() / (RAND_MAX / 40.0f)) + 1.0f, (rand() / (RAND_MAX / 4.0f)) + 1.0f, vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1)));
+	}
+
+	m_currentScene->addActor(new Plane(vec2(0, 1), -53, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(0, -1), -53, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(1, 0), -97, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Plane(vec2(-1, 0), -97, vec4(0, 1, 0, 1)));
+
+	m_currentScene->setGravity({ 0, -9.1f });
 
 	// Return true for a successful startup.
 	return true;
@@ -80,4 +88,9 @@ void PhysicsGame::changeScene(PhysicsScene* scene)
 
 	// Set the current scene to the newly inserted one.
 	m_currentScene = scene;
+}
+
+const PhysicsScene PhysicsGame::getScene()
+{
+	return *m_currentScene;
 }

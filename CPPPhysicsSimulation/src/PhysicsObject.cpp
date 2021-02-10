@@ -1,5 +1,6 @@
 #include "PhysicsObject.h"
 #include "Sphere.h"
+#include "Plane.h"
 
 collisionCheck_t PhysicsObject::collisionCheckFunctionArray[COLLISIONROWSIZE * COLLISIONROWSIZE] = 
 { 
@@ -28,12 +29,34 @@ bool PhysicsObject::plane2Plane(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 {
+	// Attempt to cast the actors into spheres
+	Plane* plane = dynamic_cast<Plane*>(actor1);
+	Sphere* sphere = dynamic_cast<Sphere*>(actor2);
 
+	// If a cast was unsuccessful, it will be a nullptr. This if statement checks that for us.
+	if (plane && sphere)
+	{
+		// D1 = (C * N) - D - R
+		float sphereToPlane = glm::dot(sphere->getPosition(), plane->getNormal()) - plane->getDistance();
+		float intersection = sphere->getRadius() - sphereToPlane;
+		float velocityOutOfPlane = glm::dot(sphere->getVelocity(), plane->getNormal());
+
+		if (intersection > 0 && velocityOutOfPlane < 0) {
+			// handle collision
+			/*sphere->applyForce(-sphere->getVelocity() * sphere->getMass() );*/
+			plane->resolveCollision(sphere);
+			return true;
+		}
+		return false;
+	}
+
+	printf("plane2Sphere collision function activated, but one or more are of the wrong type!\n");
+	return false;
 }
 
 bool PhysicsObject::plane2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
-
+	return false;
 }
 
 
@@ -57,7 +80,11 @@ bool PhysicsObject::sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 		// Get the sum of both spheres radii...
 		float radiusSum = sphere1->getRadius() + sphere2->getRadius();
 		// And check to see if their distance is equal to or less than the sum of their radii!
-		return sphereDist <= radiusSum;
+		if (sphereDist <= radiusSum) {
+			sphere1->resolveCollision(sphere2);
+			return true;
+		}
+		return false;
 	}
 
 	printf("sphere2Sphere collision function activated, but one or more are of the wrong type!\n");
@@ -66,7 +93,7 @@ bool PhysicsObject::sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::sphere2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
-
+	return false;
 }
 
 
@@ -84,7 +111,7 @@ bool PhysicsObject::box2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::box2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
-
+	return false;
 }
 
 #pragma endregion

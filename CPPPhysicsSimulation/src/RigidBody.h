@@ -36,6 +36,11 @@ public:
 	/// <param name="actor2">The object to apply a force to.</param>
 	/// <param name="force">A vector representing the force of which to add.</param>
 	void applyForceToActor(Rigidbody* actor2, glm::vec2 force);
+	/// <summary>
+	/// Resolves a collision between this body and another.
+	/// </summary>
+	/// <param name="actor2">The other object of which the interaction occured with.</param>
+	void resolveCollision(Rigidbody* actor2);
 
 	/// <summary>
 	/// Used to retrieve the current position. Modifying this value will not change this objects position.
@@ -57,6 +62,16 @@ public:
 	/// </summary>
 	/// <returns>The mass of this object in newtons.</returns>
 	float getMass() { return m_mass; }
+	/// <summary>
+	/// Calculates and returns the kinetic energy exerted by this object.
+	/// </summary>
+	/// <returns>This objects kinetic energy in joules.</returns>
+	float getKineticEnergy();
+	/// <summary>
+	/// Calculates and returns the potential energy of this object.
+	/// </summary>
+	/// <returns>This objects potential energy in joules.</returns>
+	float getPotentialEnergy();
 
 protected:
 	/// <summary>
