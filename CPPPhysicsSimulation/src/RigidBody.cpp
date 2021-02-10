@@ -19,12 +19,15 @@ void Rigidbody::fixedUpdate(glm::vec2 gravity, float timeStep)
 	applyForce(gravity * m_mass * timeStep);
 	// Then, add the current velocity in units/s multiplied by the amount of time per step in seconds to the current position.
 	m_position += m_velocity * timeStep;
+
+	m_rotation += m_angularVelocity * timeStep;
 }
 
-void Rigidbody::applyForce(glm::vec2 force)
+void Rigidbody::applyForce(glm::vec2 force, glm::vec2 position)
 {
 	// A = F/M
 	m_velocity += force / m_mass;
+	m_angularVelocity += (force.y * position.x - force.x * position.y) / m_moment;
 }
 
 void Rigidbody::applyForceToActor(Rigidbody* actor2, glm::vec2 force)

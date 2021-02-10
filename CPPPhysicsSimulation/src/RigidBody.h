@@ -29,18 +29,13 @@ public:
 	/// Instantly applies a force to the object, accounting for its mass.
 	/// </summary>
 	/// <param name="force">A vector representing the force of which to add.</param>
-	void applyForce(glm::vec2 force);
-	/// <summary>
-	/// Instantly applies a force to the desired object along with an equal and opposite force to the one this function is called from, accounting for both their masses.
-	/// </summary>
-	/// <param name="actor2">The object to apply a force to.</param>
-	/// <param name="force">A vector representing the force of which to add.</param>
-	void applyForceToActor(Rigidbody* actor2, glm::vec2 force);
+	/// <param name="position">The position at which the collision occured.</param>
+	void applyForce(glm::vec2 force, glm::vec2 position);
 	/// <summary>
 	/// Resolves a collision between this body and another.
 	/// </summary>
 	/// <param name="actor2">The other object of which the interaction occured with.</param>
-	void resolveCollision(Rigidbody* actor2);
+	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr); // FILL IN SUMMARY
 
 	/// <summary>
 	/// Used to retrieve the current position. Modifying this value will not change this objects position.
@@ -72,6 +67,15 @@ public:
 	/// </summary>
 	/// <returns>This objects potential energy in joules.</returns>
 	float getPotentialEnergy();
+
+
+	/// <summary>
+	/// Instantly applies a force to the desired object along with an equal and opposite force to the one this function is called from, accounting for both their masses.
+	/// </summary>
+	/// <param name="actor2">The object to apply a force to.</param>
+	/// <param name="force">A vector representing the force of which to add.</param>
+	[[depreciated("Pre-rotation function, use applyForce instead.")]]
+	void applyForceToActor(Rigidbody* actor2, glm::vec2 force);
 
 protected:
 	/// <summary>
