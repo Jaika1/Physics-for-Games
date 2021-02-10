@@ -39,6 +39,10 @@ void Rigidbody::resolveCollision(Rigidbody* actor2)
 	glm::vec2 normal = glm::normalize(actor2->m_position - m_position);
 	glm::vec2 relativeVelocity = actor2->m_velocity - m_velocity;
 
+	// If you're moving apart, don't bother resolving
+	if (glm::dot(normal, relativeVelocity) > 0.0f)
+		return;
+
 	float elasticity = 1;
 	float energy = glm::dot(-(1+elasticity) * (relativeVelocity), normal) / ( (1 / m_mass) + (1 / actor2->m_mass));
 

@@ -87,6 +87,14 @@ protected:
 	/// </summary>
 	float m_rotation;
 	/// <summary>
+	/// This objects current angular velocity.
+	/// </summary>
+	float m_angularVelocity;
+	/// <summary>
+	/// This objects moment of inertia.
+	/// </summary>
+	float m_moment;
+	/// <summary>
 	/// The mass of this object.
 	/// </summary>
 	float m_mass;

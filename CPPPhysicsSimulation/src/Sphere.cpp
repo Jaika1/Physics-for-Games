@@ -7,6 +7,7 @@ Sphere::Sphere(glm::vec2 position, glm::vec2 velocity, float mass, float radius,
 	// The code above simply sets this objects initial position, velocity and mass, sets the rotation to 0 since it's
 	// redundant here, sets the objects ID to a sphere for later identification, and finally sets the radius and colour
 	// to the given values.
+	m_moment = 0.5f * mass * radius * radius;
 }
 
 void Sphere::draw()
