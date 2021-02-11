@@ -43,8 +43,8 @@ bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 		if (intersection > 0 && velocityOutOfPlane < 0) {
 			// handle collision
-			/*sphere->applyForce(-sphere->getVelocity() * sphere->getMass() );*/
-			plane->resolveCollision(sphere);
+			glm::vec2 pointOfContact = (plane->getNormal() * sphere->getRadius());
+			plane->resolveCollision(sphere, pointOfContact);
 			return true;
 		}
 		return false;
@@ -81,7 +81,7 @@ bool PhysicsObject::sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 		float radiusSum = sphere1->getRadius() + sphere2->getRadius();
 		// And check to see if their distance is equal to or less than the sum of their radii!
 		if (sphereDist <= radiusSum) {
-			sphere1->resolveCollision(sphere2);
+			sphere1->resolveCollision(sphere2, 0.5f * (sphere1->getPosition() + sphere2->getPosition()));
 			return true;
 		}
 		return false;

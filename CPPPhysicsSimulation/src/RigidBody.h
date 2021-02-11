@@ -58,6 +58,11 @@ public:
 	/// <returns>The mass of this object in newtons.</returns>
 	float getMass() { return m_mass; }
 	/// <summary>
+	/// Used to retrieve this objects moment of inertia. Modifying this value will not change this value.
+	/// </summary>
+	/// <returns>This objects moment of inertia.</returns>
+	float getMoment() { return m_moment; }
+	/// <summary>
 	/// Calculates and returns the kinetic energy exerted by this object.
 	/// </summary>
 	/// <returns>This objects kinetic energy in joules.</returns>

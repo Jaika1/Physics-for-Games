@@ -35,7 +35,12 @@ bool PhysicsGame::startup() {
 
 	// Adding a bunch of actors to the scene for testing purposes.
 	for (int i = 0; i < 200; ++i) {
-		m_currentScene->addActor(new Sphere(vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f), vec2((rand() / (RAND_MAX / 100.0f)) - 50.0f, (rand() / (RAND_MAX / 100.0f)) - 50.0f), (rand() / (RAND_MAX / 40.0f)) + 1.0f, 1.0f, vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1)));
+		m_currentScene->addActor(new Sphere(
+			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f), 
+			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f), 
+			(rand() / (RAND_MAX / 2.0f)) + 1.0f, 
+			1.0f,
+			vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1)));
 	}
 
 	m_currentScene->addActor(new Plane(vec2(0, 1), -53, vec4(0, 1, 0, 1)));

@@ -32,7 +32,7 @@ public:
 	/// Resolves a collision between this body and another.
 	/// </summary>
 	/// <param name="actor2">The other object of which the interaction occured with.</param>
-	void resolveCollision(Rigidbody* actor2);
+	void resolveCollision(Rigidbody* actor2, glm::vec2 contact); // ALSO UPDATE MEEEEEEEEE
 
 	/// <summary>
 	/// Used to retrieve the normal for this plane. Modifying this value will not change the normal.

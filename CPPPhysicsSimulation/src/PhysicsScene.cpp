@@ -62,7 +62,7 @@ void PhysicsScene::update(float deltaTime)
 			for (int inner = outer + 1; inner < actorCount; inner++) {
 				PhysicsObject* actor2 = m_actors[inner];
 
-				if (PhysicsObject::checkCollision(actor1, actor2)) printf("Collision!\n");
+				PhysicsObject::checkCollision(actor1, actor2);
 			}
 		}
 	}

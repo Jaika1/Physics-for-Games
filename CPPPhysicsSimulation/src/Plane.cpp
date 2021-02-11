@@ -29,7 +29,7 @@ void Plane::draw()
 	aie::Gizmos::add2DTri(end, end - m_normal * 3.0f, start - m_normal * 3.0f, m_colour, colourFade, colourFade);
 }
 
-void Plane::resolveCollision(Rigidbody* actor2)
+void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 {
 	float elasticity = 1;
 	float energy = glm::dot(-(1 + elasticity) * (actor2->getVelocity()), m_normal) / (1 / actor2->getMass());
@@ -40,7 +40,7 @@ void Plane::resolveCollision(Rigidbody* actor2)
 	// checking after force has been applied.
 	float kePre = actor2->getKineticEnergy();
 
-	actor2->applyForce(force);
+	actor2->applyForce(force, contact);
 
 	float kePost = actor2->getKineticEnergy();
 
