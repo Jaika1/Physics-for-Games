@@ -45,7 +45,7 @@ bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 		if (intersection > 0 && velocityOutOfPlane < 0) {
 			// handle collision
 			glm::vec2 pointOfContact = (plane->getNormal() * sphere->getRadius());
-			plane->resolveCollision(sphere, pointOfContact);
+			plane->resolveCollision(sphere, sphere->getPosition() + pointOfContact);
 			return true;
 		}
 		return false;
@@ -138,6 +138,36 @@ bool PhysicsObject::sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::sphere2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
+	Sphere* sphere = dynamic_cast<Sphere*>(actor1);
+	Box* box = dynamic_cast<Box*>(actor2);
+
+	if (sphere && box)
+	{
+		glm::vec2 circlePosWorld = sphere->getPosition() - box->getPosition();
+		glm::vec2 circlePosBox = glm::vec2(glm::dot(circlePosWorld, box->getLocalX()), glm::dot(circlePosWorld, box->getLocalY()));
+
+		glm::vec2 closestPointOnBox = circlePosBox;
+		glm::vec2 extents = box->getExtents();
+
+		if (closestPointOnBox.x < -extents.x) closestPointOnBox.x = -extents.x;
+		if (closestPointOnBox.x > extents.x) closestPointOnBox.x = extents.x;
+		if (closestPointOnBox.y < -extents.y) closestPointOnBox.y = -extents.y;
+		if (closestPointOnBox.y > extents.y) closestPointOnBox.y = extents.y;
+
+		glm::vec2 closestPointOnBoxWorld = box->getPosition() + closestPointOnBox.x * box->getLocalX() + closestPointOnBox.y * box->getLocalY();
+		glm::vec2 circleToBox = sphere->getPosition() - closestPointOnBoxWorld;
+
+		if (glm::length(circleToBox) < sphere->getRadius())
+		{
+			glm::vec2 direction = glm::normalize(circleToBox);
+			box->resolveCollision(sphere, closestPointOnBoxWorld, &direction);
+			return true;
+		}
+
+		return false;
+	}
+
+	printf("sphere2Box collision function activated, but one or more are of the wrong type!\n");
 	return false;
 }
 
