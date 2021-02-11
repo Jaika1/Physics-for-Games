@@ -48,6 +48,11 @@ public:
 	/// <returns>The current velocity vector.</returns>
 	glm::vec2 getVelocity() { return m_velocity; }
 	/// <summary>
+	/// Used to retrieve the current angular velocity. Modifying this value will not change this objects angular velocity.
+	/// </summary>
+	/// <returns>The current angular velocity.</returns>
+	float getAngularVelocity() { return m_angularVelocity; }
+	/// <summary>
 	/// Used to retrieve the current rotation. Modifying this value will not change this objects rotation.
 	/// </summary>
 	/// <returns>This objects current rotation in radians.</returns>

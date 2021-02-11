@@ -31,8 +31,16 @@ void Plane::draw()
 
 void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 {
+	glm::vec2 localContact = contact - actor2->getPosition();
+
+	glm::vec2 relativeVelocity = actor2->getVelocity() + actor2->getAngularVelocity() * glm::vec2(-localContact.y, localContact.x);
+	float velocityIntoPlane = glm::dot(relativeVelocity, m_normal);
+
 	float elasticity = 1;
-	float energy = glm::dot(-(1 + elasticity) * (actor2->getVelocity()), m_normal) / (1 / actor2->getMass());
+
+	float relative = glm::dot(localContact, glm::vec2(m_normal.y, -m_normal.x));
+	float effectiveMass = 1.0f / (1.0f / actor2->getMass() + (relative * relative) / actor2->getMoment());
+	float energy = -(1 + elasticity) * velocityIntoPlane * effectiveMass;
 
 	glm::vec2 force = m_normal * energy;
 
@@ -40,7 +48,7 @@ void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 	// checking after force has been applied.
 	float kePre = actor2->getKineticEnergy();
 
-	actor2->applyForce(force, contact);
+	actor2->applyForce(force, contact - actor2->getPosition());
 
 	float kePost = actor2->getKineticEnergy();
 
@@ -48,6 +56,6 @@ void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 	// this could inform us we have a calculation error.
 	float keDiff = fabsf(kePost - kePre);
 	if (keDiff > fabsf(kePre) * 0.01f) {
-		printf("Kinetic energy discrepancy is >1%!");
+		printf("Kinetic energy discrepancy is >1%!\n\r");
 	}
 }

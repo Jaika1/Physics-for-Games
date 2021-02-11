@@ -77,7 +77,7 @@ void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2
 		// this could inform us we have a calculation error.
 		float keDiff = fabsf(kePost - kePre);
 		if (keDiff > fabsf(kePre) * 0.01f) {
-			printf("Kinetic energy discrepancy is >1%!");
+			printf("Kinetic energy discrepancy is >1%!\n\r");
 		}
 	}
 }

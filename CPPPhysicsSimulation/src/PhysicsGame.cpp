@@ -9,6 +9,7 @@
 #include "Plane.h"
 #include <Input.h>
 #include <time.h>
+#include "Box.h"
 
 using namespace aie;
 using namespace glm;
@@ -34,7 +35,7 @@ bool PhysicsGame::startup() {
 	srand(time(nullptr));
 
 	// Adding a bunch of actors to the scene for testing purposes.
-	for (int i = 0; i < 200; ++i) {
+	for (int i = 0; i < 0; ++i) {
 		m_currentScene->addActor(new Sphere(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f), 
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f), 
@@ -47,6 +48,7 @@ bool PhysicsGame::startup() {
 	m_currentScene->addActor(new Plane(vec2(0, -1), -53, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(1, 0), -97, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(-1, 0), -97, vec4(0, 1, 0, 1)));
+	m_currentScene->addActor(new Box(vec2(0, 0), vec2(10, 10), 1, pi<float>()/4.0f, vec2(10, 5), vec4(0.8,0.4,1,1)));
 
 	m_currentScene->setGravity({ 0, -9.1f });
 

@@ -1,6 +1,7 @@
 #include "PhysicsObject.h"
 #include "Sphere.h"
 #include "Plane.h"
+#include "Box.h"
 
 collisionCheck_t PhysicsObject::collisionCheckFunctionArray[COLLISIONROWSIZE * COLLISIONROWSIZE] = 
 { 
@@ -29,7 +30,7 @@ bool PhysicsObject::plane2Plane(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 {
-	// Attempt to cast the actors into spheres
+	// Attempt to cast the actors into a plane and a sphere.
 	Plane* plane = dynamic_cast<Plane*>(actor1);
 	Sphere* sphere = dynamic_cast<Sphere*>(actor2);
 
@@ -56,6 +57,50 @@ bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::plane2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
+	// Attempt to cast the actors into a plane and a box.
+	Plane* plane = dynamic_cast<Plane*>(actor1);
+	Box* box = dynamic_cast<Box*>(actor2);
+
+	// If a cast was unsuccessful, it will be a nullptr. This if statement checks that for us.
+	if (plane && box)
+	{
+		float numContacts = 0;
+		glm::vec2 contact(0.0f);
+		float contactV = 0.0f;
+
+		// Aquire a representitive point on the plane
+		glm::vec2 planeOrigin = plane->getNormal() * plane->getDistance();
+
+		//Check for a collision at each corner of our box
+		for (float x = -box->getExtents().x; x < box->getExtents().x * 2.0f; x += box->getExtents().x * 2.0f)
+		{
+			for (float y = -box->getExtents().y; y < box->getExtents().y * 2.0f; y += box->getExtents().y * 2.0f)
+			{
+				glm::vec2 cornerPosition = box->getPosition() + x * box->getLocalX() + y * box->getLocalY();
+				float distanceFromPlane = glm::dot(cornerPosition - planeOrigin, plane->getNormal());
+
+				glm::vec2 displacement = x * box->getLocalX() + y * box->getLocalY();
+				glm::vec2 pointVelocity = box->getVelocity() + box->getAngularVelocity() * glm::vec2(-displacement.y, displacement.x);
+				float velocityIntoPlane = glm::dot(pointVelocity, plane->getNormal());
+
+				if (distanceFromPlane < 0.0f && velocityIntoPlane <= 0.0f)
+				{
+					++numContacts;
+					contact += cornerPosition;
+					contactV += velocityIntoPlane;
+				}
+			}
+		}
+
+		if (numContacts)
+		{
+			plane->resolveCollision(box, contact / numContacts);
+			return true;
+		}
+		return false;
+	}
+
+	printf("plane2Box collision function activated, but one or more are of the wrong type!\n");
 	return false;
 }
 
