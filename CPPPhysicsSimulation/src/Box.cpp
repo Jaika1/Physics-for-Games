@@ -30,8 +30,8 @@ void Box::draw()
 	aie::Gizmos::add2DTri(topLeftCorner, bottomLeftCorner, bottomRightCorner, m_colour);
 
 	// Draw a line to represent each local axis
-	aie::Gizmos::add2DLine(m_position, m_position + (m_localX * m_extents.x), -m_colour);
-	aie::Gizmos::add2DLine(m_position, m_position + (m_localY * m_extents.y), -m_colour);
+	aie::Gizmos::add2DLine(m_position, m_position + (m_localX * m_extents.x), glm::vec4(1 - m_colour.x, 1 - m_colour.y, 1 - m_colour.z, m_colour.a));
+	aie::Gizmos::add2DLine(m_position, m_position + (m_localY * m_extents.y), glm::vec4(1 - m_colour.x, 1 - m_colour.y, 1 - m_colour.z, m_colour.a));
 }
 
 bool Box::checkBoxCorners(const Box& box, glm::vec2& contact, float& numContacts, float& pen, glm::vec2& edgeNormal)
