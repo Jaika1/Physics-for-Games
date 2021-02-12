@@ -2,8 +2,11 @@
 #include "PhysicsGame.h"
 #include "PhysicsScene.h"
 
+#define MIN_LINEAR_THRESHOLD 0.01f
+#define MIN_ANGULAR_THRESHOLD MIN_LINEAR_THRESHOLD
+
 Rigidbody::Rigidbody(ShapeType shapeID, glm::vec2 position, glm::vec2 velocity, float rotation, float mass) : PhysicsObject(shapeID),
-m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f)
+m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f), m_linearDrag(0.4f), m_angularDrag(0.4f)
 {
 	// The code above sets up this instance with an initial position, velocity, rotation and mass, along with
 	// passing through shapeID to the inherited PhysicsObject.
@@ -17,6 +20,14 @@ void Rigidbody::fixedUpdate(glm::vec2 gravity, float timeStep)
 {
 	// Apply the force of gravity (also in units/s), multiplied by this objects mass 
 	applyForce(gravity * m_mass * timeStep, glm::vec2(0));
+
+	// Calculate and apply drag to each velocity variable
+	m_velocity -= m_velocity * m_linearDrag * timeStep;
+	m_angularVelocity -= m_angularVelocity * m_angularDrag * timeStep;
+
+	if (glm::length(m_velocity) < MIN_LINEAR_THRESHOLD) m_velocity = glm::vec2(0.0f);
+	if (fabsf(m_angularVelocity) < MIN_ANGULAR_THRESHOLD) m_angularVelocity = 0.0f;
+
 	// Then, add the current velocity in units/s multiplied by the amount of time per step in seconds to the current position.
 	m_position += m_velocity * timeStep;
 
@@ -58,7 +69,7 @@ void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2
 		float mass1 = 1.0f / (1.0f / m_mass + (r1 * r1) / m_moment);
 		float mass2 = 1.0f / (1.0f / actor2->m_mass + (r2 * r2) / actor2->m_moment);
 
-		float elasticity = 1.0f;
+		float elasticity = (getElasticity() + actor2->getElasticity()) / 2.0f;
 
 		glm::vec2 force = (1.0f + elasticity) * mass1 * mass2 / (mass1 + mass2) * (v1 - v2) * normal;
 

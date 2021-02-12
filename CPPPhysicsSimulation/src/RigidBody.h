@@ -68,6 +68,17 @@ public:
 	/// <returns>This objects moment of inertia.</returns>
 	float getMoment() const { return m_moment; }
 	/// <summary>
+	/// Used to retrieve this objects linear drag. Modifying this value will not change the linear drag for this object.
+	/// </summary>
+	/// <returns>This objects linear drag.</returns>
+	float getLinearDrag() const { return m_linearDrag; }
+	/// <summary>
+	/// Used to retrieve this objects angular drag. Modifying this value will not change the angular drag for this object.
+	/// </summary>
+	/// <returns>This objects angular drag.</returns>
+	float getAngularDrag() const { return m_angularDrag; }
+
+	/// <summary>
 	/// Calculates and returns the kinetic energy exerted by this object.
 	/// </summary>
 	/// <returns>This objects kinetic energy in joules.</returns>
@@ -112,5 +123,13 @@ protected:
 	/// The mass of this object.
 	/// </summary>
 	float m_mass;
+	/// <summary>
+	/// This objects linear drag.
+	/// </summary>
+	float m_linearDrag;
+	/// <summary>
+	/// This objects angular drag.
+	/// </summary>
+	float m_angularDrag;
 };
 

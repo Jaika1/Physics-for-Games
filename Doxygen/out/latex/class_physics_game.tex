@@ -1,0 +1,124 @@
+\hypertarget{class_physics_game}{}\doxysection{Physics\+Game Class Reference}
+\label{class_physics_game}\index{PhysicsGame@{PhysicsGame}}
+
+
+The class that manages the application window and game loop, along with scene selection and switching.  
+
+
+
+
+{\ttfamily \#include $<$Physics\+Game.\+h$>$}
+
+Inheritance diagram for Physics\+Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_physics_game}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_physics_game_a43a26c63e17d7a06a45f3d96fff24dd6}{startup}} ()
+\begin{DoxyCompactList}\small\item\em Overridden from aie\+::\+Aplication, called right after the window is initialised. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_game_ab3151666bf05c1e1f1b4f9a8274d8ebd}{shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Overridden from aie\+::\+Aplication, called when the window is closing. Currently empty. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_game_a3afeeae62ef9095266d37e04df9dd22e}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Overridden from aie\+::\+Application. Called each frame, executes the update method in the current scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_game_a70536a260cd2edc35b21c8782b57298d}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Overridden from aie\+::\+Application. Called each frame, clears the screen and calls aie\+::\+Gizmos\+::draw2D. Also displays the current F\+PS in the top right corner. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_game_a2da50ed286a8f44244664fa1fd247c2e}{change\+Scene}} (\mbox{\hyperlink{class_physics_scene}{Physics\+Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Deletes the current scene (if any is loaded) and sets the scene to the new one specified. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}} \mbox{\hyperlink{class_physics_game_aa040a9eb8b8cbdcb8802e51efd835827}{get\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current scene (if any is loaded). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that manages the application window and game loop, along with scene selection and switching. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physics_game_a2da50ed286a8f44244664fa1fd247c2e}\label{class_physics_game_a2da50ed286a8f44244664fa1fd247c2e}} 
+\index{PhysicsGame@{PhysicsGame}!changeScene@{changeScene}}
+\index{changeScene@{changeScene}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{changeScene()}{changeScene()}}
+{\footnotesize\ttfamily void Physics\+Game\+::change\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_scene}{Physics\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Deletes the current scene (if any is loaded) and sets the scene to the new one specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & A pointer to the new scene to switch to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_physics_game_a70536a260cd2edc35b21c8782b57298d}\label{class_physics_game_a70536a260cd2edc35b21c8782b57298d}} 
+\index{PhysicsGame@{PhysicsGame}!draw@{draw}}
+\index{draw@{draw}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Physics\+Game\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overridden from aie\+::\+Application. Called each frame, clears the screen and calls aie\+::\+Gizmos\+::draw2D. Also displays the current F\+PS in the top right corner. 
+
+\mbox{\Hypertarget{class_physics_game_aa040a9eb8b8cbdcb8802e51efd835827}\label{class_physics_game_aa040a9eb8b8cbdcb8802e51efd835827}} 
+\index{PhysicsGame@{PhysicsGame}!getScene@{getScene}}
+\index{getScene@{getScene}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{getScene()}{getScene()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}} Physics\+Game\+::get\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current scene (if any is loaded). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The current scene being used by the game.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_physics_game_ab3151666bf05c1e1f1b4f9a8274d8ebd}\label{class_physics_game_ab3151666bf05c1e1f1b4f9a8274d8ebd}} 
+\index{PhysicsGame@{PhysicsGame}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily void Physics\+Game\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overridden from aie\+::\+Aplication, called when the window is closing. Currently empty. 
+
+\mbox{\Hypertarget{class_physics_game_a43a26c63e17d7a06a45f3d96fff24dd6}\label{class_physics_game_a43a26c63e17d7a06a45f3d96fff24dd6}} 
+\index{PhysicsGame@{PhysicsGame}!startup@{startup}}
+\index{startup@{startup}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily bool Physics\+Game\+::startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overridden from aie\+::\+Aplication, called right after the window is initialised. 
+
+\begin{DoxyReturn}{Returns}
+Wether the startup succeeded or not.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_physics_game_a3afeeae62ef9095266d37e04df9dd22e}\label{class_physics_game_a3afeeae62ef9095266d37e04df9dd22e}} 
+\index{PhysicsGame@{PhysicsGame}!update@{update}}
+\index{update@{update}!PhysicsGame@{PhysicsGame}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Physics\+Game\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overridden from aie\+::\+Application. Called each frame, executes the update method in the current scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The amount of time that has elapsed since the last update.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Physics\+Game.\+h\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Physics\+Game.\+cpp\end{DoxyCompactItemize}

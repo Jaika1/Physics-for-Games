@@ -1,0 +1,221 @@
+\hypertarget{class_box}{}\doxysection{Box Class Reference}
+\label{class_box}\index{Box@{Box}}
+
+
+A 2D box (or square) that can interract with other objects.  
+
+
+
+
+{\ttfamily \#include $<$Box.\+h$>$}
+
+Inheritance diagram for Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_box_a26bfc2b2cf0db4de400d4fe73b75adfc}{Box}} (glm\+::vec2 position, glm\+::vec2 velocity, float mass, float rotation, glm\+::vec2 extents, glm\+::vec4 colour)
+\begin{DoxyCompactList}\small\item\em Initialise a new box with an initial position, velocity, mass, rotation, extents, and colour. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_box_aa9a65215270d48bfc5af6dcd8890f4fd}{fixed\+Update}} (glm\+::vec2 gravity, float time\+Step) override
+\begin{DoxyCompactList}\small\item\em Overridden from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}. Physics update, called when each fixed time-\/step has elapsed as defined in \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_box_a73e00d837b4ff7cac3f300282a58e8ad}{draw}} () override
+\begin{DoxyCompactList}\small\item\em Queues the object in question for drawing. Must be overriden. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_box_ac52ffac1d620fe8967b979e36f61b1fb}\label{class_box_ac52ffac1d620fe8967b979e36f61b1fb}} 
+bool {\bfseries check\+Box\+Corners} (const \mbox{\hyperlink{class_box}{Box}} \&box, glm\+::vec2 \&contact, float \&num\+Contacts, float \&pen, glm\+::vec2 \&edge\+Normal)
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_a9f74d4a2acbd280c9a4a4a21d0681c4d}{get\+Extents}} () const
+\begin{DoxyCompactList}\small\item\em Used to retrieve the extents of tis box. Modifying this value will not change the value of either extent. \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_box_ac2063a17710304e8bdd9c58c7eea9003}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Used to retrieve this objects colour when drawing. Modifying this value will not change the colour of this object. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_ad660470d9c1af6258f14b98d168f8da2}{get\+LocalX}} () const
+\begin{DoxyCompactList}\small\item\em Used to retrieve the local x axis. Modifying this value will not change the axis. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_afe592f8f20715912bf7060c57224121d}{get\+LocalY}} () const
+\begin{DoxyCompactList}\small\item\em Used to retrieve the local y axis. Modifying this value will not change the axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_a8f5a631cb798cb3cb10233a96b0a4fac}{m\+\_\+extents}}
+\begin{DoxyCompactList}\small\item\em The width and height of this box. \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_box_a19f97d818f628dfceed981f91cad584d}{m\+\_\+colour}}
+\begin{DoxyCompactList}\small\item\em The colour to be used when drawing this sphere. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_ab32c63781b62feb9be810bb15a99aa9f}{m\+\_\+localX}}
+\begin{DoxyCompactList}\small\item\em The local X axis for this box. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{class_box_a96930b5d2c7b8357b16da55c984ddcb5}{m\+\_\+localY}}
+\begin{DoxyCompactList}\small\item\em The local Y axis for this box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A 2D box (or square) that can interract with other objects. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_box_a26bfc2b2cf0db4de400d4fe73b75adfc}\label{class_box_a26bfc2b2cf0db4de400d4fe73b75adfc}} 
+\index{Box@{Box}!Box@{Box}}
+\index{Box@{Box}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{Box()}{Box()}}
+{\footnotesize\ttfamily Box\+::\+Box (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{position,  }\item[{glm\+::vec2}]{velocity,  }\item[{float}]{mass,  }\item[{float}]{rotation,  }\item[{glm\+::vec2}]{extents,  }\item[{glm\+::vec4}]{colour }\end{DoxyParamCaption})}
+
+
+
+Initialise a new box with an initial position, velocity, mass, rotation, extents, and colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of this object.\\
+\hline
+{\em velocity} & The initial velocity vector for this object.\\
+\hline
+{\em mass} & The mass of this object in newtons.\\
+\hline
+{\em rotation} & The rotation of this object in radians.\\
+\hline
+{\em extents} & The extents of this box from the center of mass.\\
+\hline
+{\em colour} & The colour of this box to use when rendering.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_box_a73e00d837b4ff7cac3f300282a58e8ad}\label{class_box_a73e00d837b4ff7cac3f300282a58e8ad}} 
+\index{Box@{Box}!draw@{draw}}
+\index{draw@{draw}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Box\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Queues the object in question for drawing. Must be overriden. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_object_a9a97bd32d1ebc7cc42630dd877c3a331}{Physics\+Object}}.
+
+\mbox{\Hypertarget{class_box_aa9a65215270d48bfc5af6dcd8890f4fd}\label{class_box_aa9a65215270d48bfc5af6dcd8890f4fd}} 
+\index{Box@{Box}!fixedUpdate@{fixedUpdate}}
+\index{fixedUpdate@{fixedUpdate}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{fixedUpdate()}{fixedUpdate()}}
+{\footnotesize\ttfamily void Box\+::fixed\+Update (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{gravity,  }\item[{float}]{time\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overridden from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}. Physics update, called when each fixed time-\/step has elapsed as defined in \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gravity} & The gravity vector.\\
+\hline
+{\em time\+Step} & The length of a time-\/step.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_rigidbody_a3629daf566e932bd61afd3a4a49932f3}{Rigidbody}}.
+
+\mbox{\Hypertarget{class_box_ac2063a17710304e8bdd9c58c7eea9003}\label{class_box_ac2063a17710304e8bdd9c58c7eea9003}} 
+\index{Box@{Box}!getColor@{getColor}}
+\index{getColor@{getColor}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily glm\+::vec4 Box\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve this objects colour when drawing. Modifying this value will not change the colour of this object. 
+
+\begin{DoxyReturn}{Returns}
+The colour of which this object is represented with when drawn.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_box_a9f74d4a2acbd280c9a4a4a21d0681c4d}\label{class_box_a9f74d4a2acbd280c9a4a4a21d0681c4d}} 
+\index{Box@{Box}!getExtents@{getExtents}}
+\index{getExtents@{getExtents}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getExtents()}{getExtents()}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::get\+Extents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve the extents of tis box. Modifying this value will not change the value of either extent. 
+
+\begin{DoxyReturn}{Returns}
+The extents of this box.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_box_ad660470d9c1af6258f14b98d168f8da2}\label{class_box_ad660470d9c1af6258f14b98d168f8da2}} 
+\index{Box@{Box}!getLocalX@{getLocalX}}
+\index{getLocalX@{getLocalX}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getLocalX()}{getLocalX()}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::get\+LocalX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve the local x axis. Modifying this value will not change the axis. 
+
+\begin{DoxyReturn}{Returns}
+The local x axis relative to this objects center of mass
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_box_afe592f8f20715912bf7060c57224121d}\label{class_box_afe592f8f20715912bf7060c57224121d}} 
+\index{Box@{Box}!getLocalY@{getLocalY}}
+\index{getLocalY@{getLocalY}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getLocalY()}{getLocalY()}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::get\+LocalY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve the local y axis. Modifying this value will not change the axis. 
+
+\begin{DoxyReturn}{Returns}
+The local y axis relative to this objects center of mass
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_box_a19f97d818f628dfceed981f91cad584d}\label{class_box_a19f97d818f628dfceed981f91cad584d}} 
+\index{Box@{Box}!m\_colour@{m\_colour}}
+\index{m\_colour@{m\_colour}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{m\_colour}{m\_colour}}
+{\footnotesize\ttfamily glm\+::vec4 Box\+::m\+\_\+colour\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The colour to be used when drawing this sphere. 
+
+\mbox{\Hypertarget{class_box_a8f5a631cb798cb3cb10233a96b0a4fac}\label{class_box_a8f5a631cb798cb3cb10233a96b0a4fac}} 
+\index{Box@{Box}!m\_extents@{m\_extents}}
+\index{m\_extents@{m\_extents}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{m\_extents}{m\_extents}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::m\+\_\+extents\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The width and height of this box. 
+
+\mbox{\Hypertarget{class_box_ab32c63781b62feb9be810bb15a99aa9f}\label{class_box_ab32c63781b62feb9be810bb15a99aa9f}} 
+\index{Box@{Box}!m\_localX@{m\_localX}}
+\index{m\_localX@{m\_localX}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{m\_localX}{m\_localX}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::m\+\_\+localX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The local X axis for this box. 
+
+\mbox{\Hypertarget{class_box_a96930b5d2c7b8357b16da55c984ddcb5}\label{class_box_a96930b5d2c7b8357b16da55c984ddcb5}} 
+\index{Box@{Box}!m\_localY@{m\_localY}}
+\index{m\_localY@{m\_localY}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{m\_localY}{m\_localY}}
+{\footnotesize\ttfamily glm\+::vec2 Box\+::m\+\_\+localY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The local Y axis for this box. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Box.\+h\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Box.\+cpp\end{DoxyCompactItemize}

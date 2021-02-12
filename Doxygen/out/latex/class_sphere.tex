@@ -1,0 +1,139 @@
+\hypertarget{class_sphere}{}\doxysection{Sphere Class Reference}
+\label{class_sphere}\index{Sphere@{Sphere}}
+
+
+A 2D sphere (or circle) that can interract with other objects.  
+
+
+
+
+{\ttfamily \#include $<$Sphere.\+h$>$}
+
+Inheritance diagram for Sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sphere}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sphere_a67a9835d0bef74da2c8c3df69d79596d}{Sphere}} (glm\+::vec2 position, glm\+::vec2 velocity, float mass, float radius, glm\+::vec4 colour)
+\begin{DoxyCompactList}\small\item\em Initialise the new sphere with a position, initial velocity and mass, along with the spheres radius and colour. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Overridden from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}. Queues the sphere for drawing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sphere_a330dd34c7c7b6dfff106c4c71ec80028}{get\+Radius}} ()
+\begin{DoxyCompactList}\small\item\em Used to retrieve this spheres radius. Modifying this value will not change this objects radius. \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_sphere_a325e19bb649639046df891485b9df435}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Used to retrieve this objects colour when drawing. Modifying this value will not change the colour of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_sphere_a1faee6c9b6e62abf0d35cc87a1894b61}{m\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em The radius of this sphere in units. \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_sphere_aca3c6c348856bfe747dbc47eb0cc797a}{m\+\_\+colour}}
+\begin{DoxyCompactList}\small\item\em The colour to be used when drawing this sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A 2D sphere (or circle) that can interract with other objects. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sphere_a67a9835d0bef74da2c8c3df69d79596d}\label{class_sphere_a67a9835d0bef74da2c8c3df69d79596d}} 
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{Sphere()}{Sphere()}}
+{\footnotesize\ttfamily Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{position,  }\item[{glm\+::vec2}]{velocity,  }\item[{float}]{mass,  }\item[{float}]{radius,  }\item[{glm\+::vec4}]{colour }\end{DoxyParamCaption})}
+
+
+
+Initialise the new sphere with a position, initial velocity and mass, along with the spheres radius and colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of this object.\\
+\hline
+{\em velocity} & The initial velocity vector for this object.\\
+\hline
+{\em mass} & The mass of this object in newtons.\\
+\hline
+{\em radius} & The radius of this sphere.\\
+\hline
+{\em colour} & The colour of this sphere to use when rendering.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sphere_a34a34167b7544c95155d3ff30638d045}\label{class_sphere_a34a34167b7544c95155d3ff30638d045}} 
+\index{Sphere@{Sphere}!draw@{draw}}
+\index{draw@{draw}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Sphere\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overridden from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}. Queues the sphere for drawing. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_object_a9a97bd32d1ebc7cc42630dd877c3a331}{Physics\+Object}}.
+
+\mbox{\Hypertarget{class_sphere_a325e19bb649639046df891485b9df435}\label{class_sphere_a325e19bb649639046df891485b9df435}} 
+\index{Sphere@{Sphere}!getColor@{getColor}}
+\index{getColor@{getColor}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily glm\+::vec4 Sphere\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve this objects colour when drawing. Modifying this value will not change the colour of this object. 
+
+\begin{DoxyReturn}{Returns}
+The colour of which this object is represented with when drawn.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sphere_a330dd34c7c7b6dfff106c4c71ec80028}\label{class_sphere_a330dd34c7c7b6dfff106c4c71ec80028}} 
+\index{Sphere@{Sphere}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily float Sphere\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to retrieve this spheres radius. Modifying this value will not change this objects radius. 
+
+\begin{DoxyReturn}{Returns}
+this sphere\textquotesingle{}s radius in units.
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sphere_aca3c6c348856bfe747dbc47eb0cc797a}\label{class_sphere_aca3c6c348856bfe747dbc47eb0cc797a}} 
+\index{Sphere@{Sphere}!m\_colour@{m\_colour}}
+\index{m\_colour@{m\_colour}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{m\_colour}{m\_colour}}
+{\footnotesize\ttfamily glm\+::vec4 Sphere\+::m\+\_\+colour\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The colour to be used when drawing this sphere. 
+
+\mbox{\Hypertarget{class_sphere_a1faee6c9b6e62abf0d35cc87a1894b61}\label{class_sphere_a1faee6c9b6e62abf0d35cc87a1894b61}} 
+\index{Sphere@{Sphere}!m\_radius@{m\_radius}}
+\index{m\_radius@{m\_radius}!Sphere@{Sphere}}
+\doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
+{\footnotesize\ttfamily float Sphere\+::m\+\_\+radius\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The radius of this sphere in units. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Sphere.\+h\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Sphere.\+cpp\end{DoxyCompactItemize}

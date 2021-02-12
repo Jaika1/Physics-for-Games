@@ -1,0 +1,151 @@
+\hypertarget{class_physics_object}{}\doxysection{Physics\+Object Class Reference}
+\label{class_physics_object}\index{PhysicsObject@{PhysicsObject}}
+
+
+Represents the most basic form of an object that can be placed in the world. Designed to be inherited by other types, creating an instance of this on its own is heavily advised against. Also contains functions used for collision detection between different object types.  
+
+
+
+
+{\ttfamily \#include $<$Physics\+Object.\+h$>$}
+
+Inheritance diagram for Physics\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_physics_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_physics_object_a58ea286456823d7c7dfc1221701d16f8}{fixed\+Update}} (glm\+::vec2 gravity, float time\+Step)=0
+\begin{DoxyCompactList}\small\item\em Physics update, called when each fixed time-\/step has elapsed as defined in \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}}. Must be overridden. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_object_a9a97bd32d1ebc7cc42630dd877c3a331}{draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Queues the object in question for drawing. Must be overriden. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_object_ae80a0c4668a1bd03b54587235e6274e0}{reset\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Currently unused, does absolutely nothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_physics_object_a020d7b3aa30df4c6eadb7daff1be5907}{check\+Collision}} (\mbox{\hyperlink{class_physics_object}{Physics\+Object}} $\ast$actor1, \mbox{\hyperlink{class_physics_object}{Physics\+Object}} $\ast$actor2)
+\begin{DoxyCompactList}\small\item\em Used to check and handle a potential collision between 2 different objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_object_adb86f23215f13b0d53b14029a95efff3}{Physics\+Object}} (Shape\+Type shape\+ID)
+\begin{DoxyCompactList}\small\item\em Used to initialized this object and assign it an ID, which will be used for identifying it by other functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Shape\+Type \mbox{\hyperlink{class_physics_object_a765d2e70ca15ec011132e8718e610fe9}{m\+\_\+shape\+ID}}
+\begin{DoxyCompactList}\small\item\em Represents the type of shape this is. Can only be set by the initializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the most basic form of an object that can be placed in the world. Designed to be inherited by other types, creating an instance of this on its own is heavily advised against. Also contains functions used for collision detection between different object types. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_physics_object_adb86f23215f13b0d53b14029a95efff3}\label{class_physics_object_adb86f23215f13b0d53b14029a95efff3}} 
+\index{PhysicsObject@{PhysicsObject}!PhysicsObject@{PhysicsObject}}
+\index{PhysicsObject@{PhysicsObject}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{PhysicsObject()}{PhysicsObject()}}
+{\footnotesize\ttfamily Physics\+Object\+::\+Physics\+Object (\begin{DoxyParamCaption}\item[{Shape\+Type}]{shape\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Used to initialized this object and assign it an ID, which will be used for identifying it by other functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape\+ID} & What type of shape this instance is.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physics_object_a020d7b3aa30df4c6eadb7daff1be5907}\label{class_physics_object_a020d7b3aa30df4c6eadb7daff1be5907}} 
+\index{PhysicsObject@{PhysicsObject}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
+{\footnotesize\ttfamily bool Physics\+Object\+::check\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_object}{Physics\+Object}} $\ast$}]{actor1,  }\item[{\mbox{\hyperlink{class_physics_object}{Physics\+Object}} $\ast$}]{actor2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to check and handle a potential collision between 2 different objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actor1} & A pointer to the first actor to test against actor2 for a collision.\\
+\hline
+{\em actor2} & A pointer to the second actor to test against actor1 for a collision.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a collision has occured, otherwise false.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_physics_object_a9a97bd32d1ebc7cc42630dd877c3a331}\label{class_physics_object_a9a97bd32d1ebc7cc42630dd877c3a331}} 
+\index{PhysicsObject@{PhysicsObject}!draw@{draw}}
+\index{draw@{draw}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Physics\+Object\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Queues the object in question for drawing. Must be overriden. 
+
+
+
+Implemented in \mbox{\hyperlink{class_box_a73e00d837b4ff7cac3f300282a58e8ad}{Box}}, \mbox{\hyperlink{class_plane_a8877358878e91929c4c01bad40cbdb78}{Plane}}, and \mbox{\hyperlink{class_sphere_a34a34167b7544c95155d3ff30638d045}{Sphere}}.
+
+\mbox{\Hypertarget{class_physics_object_a58ea286456823d7c7dfc1221701d16f8}\label{class_physics_object_a58ea286456823d7c7dfc1221701d16f8}} 
+\index{PhysicsObject@{PhysicsObject}!fixedUpdate@{fixedUpdate}}
+\index{fixedUpdate@{fixedUpdate}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{fixedUpdate()}{fixedUpdate()}}
+{\footnotesize\ttfamily virtual void Physics\+Object\+::fixed\+Update (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{gravity,  }\item[{float}]{time\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Physics update, called when each fixed time-\/step has elapsed as defined in \mbox{\hyperlink{class_physics_scene}{Physics\+Scene}}. Must be overridden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gravity} & The gravity vector.\\
+\hline
+{\em time\+Step} & The length of a time-\/step.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_box_aa9a65215270d48bfc5af6dcd8890f4fd}{Box}}, \mbox{\hyperlink{class_rigidbody_a3629daf566e932bd61afd3a4a49932f3}{Rigidbody}}, and \mbox{\hyperlink{class_plane_a49cda9b609047fec55dd4e0f1c04c188}{Plane}}.
+
+\mbox{\Hypertarget{class_physics_object_ae80a0c4668a1bd03b54587235e6274e0}\label{class_physics_object_ae80a0c4668a1bd03b54587235e6274e0}} 
+\index{PhysicsObject@{PhysicsObject}!resetPosition@{resetPosition}}
+\index{resetPosition@{resetPosition}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{resetPosition()}{resetPosition()}}
+{\footnotesize\ttfamily virtual void Physics\+Object\+::reset\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Currently unused, does absolutely nothing. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_physics_object_a765d2e70ca15ec011132e8718e610fe9}\label{class_physics_object_a765d2e70ca15ec011132e8718e610fe9}} 
+\index{PhysicsObject@{PhysicsObject}!m\_shapeID@{m\_shapeID}}
+\index{m\_shapeID@{m\_shapeID}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{m\_shapeID}{m\_shapeID}}
+{\footnotesize\ttfamily const Shape\+Type Physics\+Object\+::m\+\_\+shape\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Represents the type of shape this is. Can only be set by the initializer. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Physics\+Object.\+h\item 
+C\+:/\+Users/s200099/\+Documents/\+Physics for Games/\+C\+P\+P\+Physics\+Simulation/src/Physics\+Object.\+cpp\end{DoxyCompactItemize}

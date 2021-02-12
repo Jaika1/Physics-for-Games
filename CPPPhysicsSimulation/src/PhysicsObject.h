@@ -29,11 +29,15 @@ protected:
 	/// Used to initialized this object and assign it an ID, which will be used for identifying it by other functions.
 	/// </summary>
 	/// <param name="shapeID">What type of shape this instance is.</param>
-	PhysicsObject(ShapeType shapeID) : m_shapeID(shapeID) {}
+	PhysicsObject(ShapeType shapeID) : m_shapeID(shapeID), m_elasticity(0.7f) {}
 	/// <summary>
 	/// Represents the type of shape this is. Can only be set by the initializer.
 	/// </summary>
 	const ShapeType m_shapeID;
+	/// <summary>
+	/// The elasticity of this object. In short terms, this represents the efficiency how much kinetic energy is maintained after a collision 
+	/// </summary>
+	float m_elasticity;
 
 public:
 	/// <summary>
@@ -57,6 +61,12 @@ public:
 	/// <param name="actor2">A pointer to the second actor to test against actor1 for a collision.</param>
 	/// <returns>True if a collision has occured, otherwise false.</returns>
 	static bool checkCollision(PhysicsObject* actor1, PhysicsObject* actor2);
+
+	/// <summary>
+	/// Used to retrieve this objects elasticity. Modifying this value will not change the elasticity for this object.
+	/// </summary>
+	/// <returns>This objects elasticity.</returns>
+	float getElasticity() const { return m_elasticity; }
 private:
 	/// <summary>
 	/// An array of function pointers that is used to determine the function required for collision checks between 2 PhysicsObject instances.
