@@ -33,3 +33,72 @@ void Box::draw()
 	aie::Gizmos::add2DLine(m_position, m_position + (m_localX * m_extents.x), -m_colour);
 	aie::Gizmos::add2DLine(m_position, m_position + (m_localY * m_extents.y), -m_colour);
 }
+
+bool Box::checkBoxCorners(const Box& box, glm::vec2& contact, float& numContacts, float& pen, glm::vec2& edgeNormal)
+{
+	float minX, maxX, minY, maxY;
+	float boxW = box.getExtents().x * 2;
+	float boxH = box.getExtents().y * 2;
+	float numLocalContacts = 0.0f;
+	glm::vec2 localContact(0);
+	bool first = true;
+
+	for (float x = -box.getExtents().x; x < boxW; x += boxW)
+	{
+		for (float y = -box.getExtents().y; y < boxH; y += boxH)
+		{
+			glm::vec2 worldPos = box.getPosition() + x * box.m_localX + y * box.m_localY;
+			glm::vec2 localPos(glm::dot(worldPos - m_position, m_localX), glm::dot(worldPos - m_position, m_localY));
+
+			if (first || localPos.x < minX) minX = localPos.x;
+			if (first || localPos.x > maxX) maxX = localPos.x;
+			if (first || localPos.y < minY) minY = localPos.y;
+			if (first || localPos.y > maxY) maxY = localPos.y;
+
+			if (localPos.x >= -m_extents.x && localPos.x <= m_extents.x && localPos.y >= -m_extents.y && localPos.y <= m_extents.y)
+			{
+				numLocalContacts++;
+				localContact = localPos;
+			}
+
+			first = false;
+		}
+	}
+
+	if (maxX <= -m_extents.x || minX >= m_extents.x || maxY <= -m_extents.y || minY >= m_extents.y)
+		return false;
+
+	if (numLocalContacts == 0)
+		return false;
+
+	bool res = false;
+	contact += m_position + (localContact.x * m_localX + localContact.y * m_localY) / numLocalContacts;
+	numContacts++;
+
+	float penetration = m_extents.x - minX;
+	if (penetration > 0 && (penetration < pen || pen == 0)) 
+	{ 
+		edgeNormal = m_localX; 
+		pen = penetration; 
+		res = true; 
+	}
+	penetration = maxX + m_extents.x; 
+	if (penetration > 0 && (penetration < pen || pen == 0)) 
+	{ 
+		edgeNormal = -m_localX; pen = penetration; res = true; 
+	}
+	penetration = m_extents.y - minY; 
+	if (penetration > 0 && (penetration < pen || pen == 0)) 
+	{ 
+		edgeNormal = m_localY;
+		pen = penetration;
+		res = true; 
+	}
+	penetration = maxY + m_extents.y; 
+	if (penetration > 0 && (penetration < pen || pen == 0)) 
+	{ 
+		edgeNormal = -m_localY; 
+		pen = penetration;
+		res = true;
+	}return res;
+}

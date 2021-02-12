@@ -41,32 +41,32 @@ public:
 	/// Used to retrieve the current position. Modifying this value will not change this objects position.
 	/// </summary>
 	/// <returns>The current positional vector.</returns>
-	glm::vec2 getPosition() { return m_position; }
+	glm::vec2 getPosition() const { return m_position; }
 	/// <summary>
 	/// Used to retrieve the current velocity. Modifying this value will not change this objects velocity.
 	/// </summary>
 	/// <returns>The current velocity vector.</returns>
-	glm::vec2 getVelocity() { return m_velocity; }
+	glm::vec2 getVelocity() const { return m_velocity; }
 	/// <summary>
 	/// Used to retrieve the current angular velocity. Modifying this value will not change this objects angular velocity.
 	/// </summary>
 	/// <returns>The current angular velocity.</returns>
-	float getAngularVelocity() { return m_angularVelocity; }
+	float getAngularVelocity() const { return m_angularVelocity; }
 	/// <summary>
 	/// Used to retrieve the current rotation. Modifying this value will not change this objects rotation.
 	/// </summary>
 	/// <returns>This objects current rotation in radians.</returns>
-	float getRotation() { return m_rotation; }
+	float getRotation() const { return m_rotation; }
 	/// <summary>
 	/// Used to retrieve this objects mass. Modifying this value will not change this objects mass.
 	/// </summary>
 	/// <returns>The mass of this object in newtons.</returns>
-	float getMass() { return m_mass; }
+	float getMass() const { return m_mass; }
 	/// <summary>
 	/// Used to retrieve this objects moment of inertia. Modifying this value will not change this value.
 	/// </summary>
 	/// <returns>This objects moment of inertia.</returns>
-	float getMoment() { return m_moment; }
+	float getMoment() const { return m_moment; }
 	/// <summary>
 	/// Calculates and returns the kinetic energy exerted by this object.
 	/// </summary>

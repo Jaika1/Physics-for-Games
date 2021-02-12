@@ -186,6 +186,31 @@ bool PhysicsObject::box2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 bool PhysicsObject::box2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 {
+	Box* box1 = dynamic_cast<Box*>(actor1);
+	Box* box2 = dynamic_cast<Box*>(actor2);
+
+	if (box1 && box2)
+	{
+		glm::vec2 boxPos = box2->getPosition() - box1->getPosition();
+		glm::vec2 normal(0, 0);
+		glm::vec2 contact(0, 0);
+
+		float penetration = 0;
+		float numContacts = 0;
+		box1->checkBoxCorners(*box2, contact, numContacts, penetration, normal);
+		if (box2->checkBoxCorners(*box1, contact, numContacts, penetration, normal))
+		{
+			normal = -normal;
+		}
+		if (penetration > 0)
+		{
+			box1->resolveCollision(box2, contact / numContacts, &normal);
+		}
+
+		return true;
+	}
+
+	printf("box2Box collision function activated, but one or more are of the wrong type!\n");
 	return false;
 }
 

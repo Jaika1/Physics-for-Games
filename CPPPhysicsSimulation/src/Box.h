@@ -22,26 +22,28 @@ public:
 	virtual void fixedUpdate(glm::vec2 gravity, float timeStep) override;
 	virtual void draw() override;
 
+	bool checkBoxCorners(const Box& box, glm::vec2& contact, float& numContacts, float& pen, glm::vec2& edgeNormal);
+
 	/// <summary>
 	/// Used to retrieve the extents of tis box. Modifying this value will not change the value of either extent.
 	/// </summary>
 	/// <returns>The extents of this box.</returns>
-	glm::vec2 getExtents() { return m_extents; }
+	glm::vec2 getExtents() const { return m_extents; }
 	/// <summary>
 	/// Used to retrieve this objects colour when drawing. Modifying this value will not change the colour of this object.
 	/// </summary>
 	/// <returns>The colour of which this object is represented with when drawn.</returns>
-	glm::vec4 getColor() { return m_colour; }
+	glm::vec4 getColor() const { return m_colour; }
 	/// <summary>
 	/// Used to retrieve the local x axis. Modifying this value will not change the axis.
 	/// </summary>
 	/// <returns>The local x axis relative to this objects center of mass</returns>
-	glm::vec2 getLocalX() { return m_localX; }
+	glm::vec2 getLocalX() const { return m_localX; }
 	/// <summary>
 	/// Used to retrieve the local y axis. Modifying this value will not change the axis.
 	/// </summary>
 	/// <returns>The local y axis relative to this objects center of mass</returns>
-	glm::vec2 getLocalY() { return m_localY; }
+	glm::vec2 getLocalY() const { return m_localY; }
 
 protected:
 	/// <summary>
