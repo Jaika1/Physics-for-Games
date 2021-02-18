@@ -1,6 +1,7 @@
 #include "PhysicsScene.h"
 #include <glm.hpp>
 #include "PhysicsObject.h"
+#include "RigidBody.h"
 
 PhysicsScene::PhysicsScene() : m_gravity(glm::vec2(0.0f, 0.0f)), m_timeStep(0.01f)
 {
@@ -75,4 +76,13 @@ void PhysicsScene::draw()
 	{
 		a->draw();
 	}
+}
+
+void PhysicsScene::ApplyContactForces(Rigidbody* body1, Rigidbody* body2, glm::vec2 norm, float pen)
+{
+	float body2Mass = body2 ? body2->getMass() : INT_MAX;
+	float body1Factor = body2Mass / (body1->getMass() + body2Mass);
+
+	body1->setPosition(body1->getPosition() - body1Factor * norm * pen);
+	if (body2) body2->setPosition(body2->getPosition() + (1 - body1Factor) * norm * pen);
 }

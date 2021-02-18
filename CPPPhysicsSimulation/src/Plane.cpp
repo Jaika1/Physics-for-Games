@@ -1,6 +1,8 @@
 ﻿#include "Plane.h"
 #include <Gizmos.h>
 #include "RigidBody.h"
+#include "PhysicsGame.h"
+#include "PhysicsScene.h"
 
 using namespace glm;
 
@@ -31,7 +33,7 @@ void Plane::draw()
 
 void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 {
-	glm::vec2 localContact = contact - actor2->getPosition();
+ 	glm::vec2 localContact = contact - actor2->getPosition();
 
 	glm::vec2 relativeVelocity = actor2->getVelocity() + actor2->getAngularVelocity() * glm::vec2(-localContact.y, localContact.x);
 	float velocityIntoPlane = glm::dot(relativeVelocity, m_normal);
@@ -56,6 +58,9 @@ void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 	// this could inform us we have a calculation error.
 	float keDiff = fabsf(kePost - kePre);
 	if (keDiff > fabsf(kePre) * 0.01f) {
-		printf("Kinetic energy discrepancy is >1%!\n\r");
+		printf("Kinetic energy discrepancy is >1%! (Plane resolve collision)\n\r");
 	}
+
+	float penetration = glm::dot(contact, m_normal) - m_distanceToOrigin;
+	GameInstance->getScene()->ApplyContactForces(actor2, nullptr, m_normal, penetration);
 }

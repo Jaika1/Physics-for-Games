@@ -29,7 +29,7 @@ protected:
 	/// Used to initialized this object and assign it an ID, which will be used for identifying it by other functions.
 	/// </summary>
 	/// <param name="shapeID">What type of shape this instance is.</param>
-	PhysicsObject(ShapeType shapeID) : m_shapeID(shapeID), m_elasticity(0.7f) {}
+	PhysicsObject(ShapeType shapeID) : m_shapeID(shapeID), m_elasticity(0.5f) {}
 	/// <summary>
 	/// Represents the type of shape this is. Can only be set by the initializer.
 	/// </summary>

@@ -35,13 +35,18 @@ public:
 	/// Resolves a collision between this body and another.
 	/// </summary>
 	/// <param name="actor2">The other object of which the interaction occured with.</param>
-	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr); // FILL IN SUMMARY
+	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr, float pen = 0); // FILL IN SUMMARY
 
 	/// <summary>
 	/// Used to retrieve the current position. Modifying this value will not change this objects position.
 	/// </summary>
 	/// <returns>The current positional vector.</returns>
 	glm::vec2 getPosition() const { return m_position; }
+	/// <summary>
+	/// Used to set this objects position.
+	/// </summary>
+	/// <param name="position">The new position for this object.</param>
+	void setPosition(glm::vec2 position) { m_position = position; };
 	/// <summary>
 	/// Used to retrieve the current velocity. Modifying this value will not change this objects velocity.
 	/// </summary>

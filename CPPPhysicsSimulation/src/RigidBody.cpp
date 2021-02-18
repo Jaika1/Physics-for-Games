@@ -6,7 +6,7 @@
 #define MIN_ANGULAR_THRESHOLD MIN_LINEAR_THRESHOLD
 
 Rigidbody::Rigidbody(ShapeType shapeID, glm::vec2 position, glm::vec2 velocity, float rotation, float mass) : PhysicsObject(shapeID),
-m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f), m_linearDrag(0.4f), m_angularDrag(0.4f)
+m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f), m_linearDrag(0.2f), m_angularDrag(0.2f)
 {
 	// The code above sets up this instance with an initial position, velocity, rotation and mass, along with
 	// passing through shapeID to the inherited PhysicsObject.
@@ -48,7 +48,7 @@ void Rigidbody::applyForceToActor(Rigidbody* actor2, glm::vec2 force)
 	applyForce(-force, glm::vec2(0));
 }
 
-void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal)
+void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal, float pen)
 {
 	// Find the vector between their centres, or use the provided direction of force and make sure
 	// it's normalised before proceeding.
@@ -88,7 +88,12 @@ void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2
 		// this could inform us we have a calculation error.
 		float keDiff = fabsf(kePost - kePre);
 		if (keDiff > fabsf(kePre) * 0.01f) {
-			printf("Kinetic energy discrepancy is >1%!\n\r");
+			printf("Kinetic energy discrepancy is >1%! (Rigidbody resolve)\n\r");
+		}
+
+		if (pen > 0)
+		{
+			GameInstance->getScene()->ApplyContactForces(this, actor2, normal, pen);
 		}
 	}
 }
@@ -102,5 +107,5 @@ float Rigidbody::getKineticEnergy()
 float Rigidbody::getPotentialEnergy()
 {
 	// PE = -mgh
-	return - m_mass * glm::dot(GameInstance->getScene().getGravity(), m_position);
+	return - m_mass * glm::dot(GameInstance->getScene()->getGravity(), m_position);
 }

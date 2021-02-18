@@ -39,7 +39,7 @@ public:
 	/// Returns the current scene (if any is loaded).
 	/// </summary>
 	/// <param name="scene">The current scene being used by the game.</param>
-	const PhysicsScene getScene();
+	PhysicsScene* getScene() const;
 private:
 	/// <summary>
 	/// A pointer to the renderer used to display stuff on-screen.

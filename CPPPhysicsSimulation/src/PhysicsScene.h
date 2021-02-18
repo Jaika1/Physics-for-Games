@@ -3,6 +3,7 @@
 #include <vector>
 
 class PhysicsObject;
+class Rigidbody;
 
 /// <summary>
 /// A scene to be updated and rendered by PhysicsGame. Holds, updates and renders a collection of PhysicsObject instances.
@@ -32,6 +33,14 @@ public:
 	/// Calls the draw function on every actor in the scene.
 	/// </summary>
 	void draw();
+	/// <summary>
+	/// Function to apply a displacement to 2 actors given their penetration.
+	/// </summary>
+	/// <param name="body1">Actor #1 involved in the collision.</param>
+	/// <param name="body2">Actor #2 involved in the collision.</param>
+	/// <param name="norm">The collision normal.</param>
+	/// <param name="pen">The penetration value.</param>
+	void ApplyContactForces(Rigidbody* body1, Rigidbody* body2, glm::vec2 norm, float pen);
 
 	/// <summary>
 	/// Changes the gravity vector to the given value.

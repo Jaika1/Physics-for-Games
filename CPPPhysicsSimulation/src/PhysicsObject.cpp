@@ -44,8 +44,9 @@ bool PhysicsObject::plane2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 
 		if (intersection > 0 && velocityOutOfPlane < 0) {
 			// handle collision
+
 			glm::vec2 pointOfContact = (plane->getNormal() * sphere->getRadius());
-			plane->resolveCollision(sphere, sphere->getPosition() + pointOfContact);
+			plane->resolveCollision(sphere, sphere->getPosition() - pointOfContact);
 			return true;
 		}
 		return false;
@@ -123,10 +124,10 @@ bool PhysicsObject::sphere2Sphere(PhysicsObject* actor1, PhysicsObject* actor2)
 		// Get the distance between the center points of both spheres...
 		float sphereDist = glm::length(sphere2->getPosition() - sphere1->getPosition());
 		// Get the sum of both spheres radii...
-		float radiusSum = sphere1->getRadius() + sphere2->getRadius();
+		float penetration = sphere1->getRadius() + sphere2->getRadius() - sphereDist;
 		// And check to see if their distance is equal to or less than the sum of their radii!
-		if (sphereDist <= radiusSum) {
-			sphere1->resolveCollision(sphere2, 0.5f * (sphere1->getPosition() + sphere2->getPosition()));
+		if (penetration > 0) {
+			sphere1->resolveCollision(sphere2, 0.5f * (sphere1->getPosition() + sphere2->getPosition()), nullptr, penetration);
 			return true;
 		}
 		return false;
@@ -156,11 +157,12 @@ bool PhysicsObject::sphere2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 
 		glm::vec2 closestPointOnBoxWorld = box->getPosition() + closestPointOnBox.x * box->getLocalX() + closestPointOnBox.y * box->getLocalY();
 		glm::vec2 circleToBox = sphere->getPosition() - closestPointOnBoxWorld;
+		float penetration = sphere->getRadius() - glm::length(circleToBox);
 
-		if (glm::length(circleToBox) < sphere->getRadius())
+		if (penetration > 0)
 		{
 			glm::vec2 direction = glm::normalize(circleToBox);
-			box->resolveCollision(sphere, closestPointOnBoxWorld, &direction);
+			box->resolveCollision(sphere, closestPointOnBoxWorld, &direction, penetration);
 			return true;
 		}
 
@@ -204,7 +206,7 @@ bool PhysicsObject::box2Box(PhysicsObject* actor1, PhysicsObject* actor2)
 		}
 		if (penetration > 0)
 		{
-			box1->resolveCollision(box2, contact / numContacts, &normal);
+			box1->resolveCollision(box2, contact / numContacts, &normal, penetration);
 		}
 
 		return true;
