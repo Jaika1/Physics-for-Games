@@ -48,6 +48,16 @@ public:
 	/// <param name="position">The new position for this object.</param>
 	void setPosition(glm::vec2 position) { m_position = position; };
 	/// <summary>
+	/// Retrieves whether or not this object is kinematic. Modifying the returned value will not change the actual value.
+	/// </summary>
+	/// <returns>A bool representing whether or not this object is kinematic.</returns>
+	bool getKinematic() const { return m_isKinematic; }
+	/// <summary>
+	/// Used to set whether this object is kinematic or not.
+	/// </summary>
+	/// <param name="kinematic">True to become kinematic; otherwise false</param>
+	void setKinematic(bool kinematic) { m_isKinematic = kinematic; };
+	/// <summary>
 	/// Used to retrieve the current velocity. Modifying this value will not change this objects velocity.
 	/// </summary>
 	/// <returns>The current velocity vector.</returns>
@@ -66,12 +76,12 @@ public:
 	/// Used to retrieve this objects mass. Modifying this value will not change this objects mass.
 	/// </summary>
 	/// <returns>The mass of this object in newtons.</returns>
-	float getMass() const { return m_mass; }
+	float getMass() const { return m_isKinematic ? INT_MAX : m_mass; }
 	/// <summary>
 	/// Used to retrieve this objects moment of inertia. Modifying this value will not change this value.
 	/// </summary>
 	/// <returns>This objects moment of inertia.</returns>
-	float getMoment() const { return m_moment; }
+	float getMoment() const { return m_isKinematic ? INT_MAX : m_moment; }
 	/// <summary>
 	/// Used to retrieve this objects linear drag. Modifying this value will not change the linear drag for this object.
 	/// </summary>
@@ -136,5 +146,9 @@ protected:
 	/// This objects angular drag.
 	/// </summary>
 	float m_angularDrag;
+	/// <summary>
+	/// Whether this object is static or not.
+	/// </summary>
+	float m_isKinematic;
 };
 

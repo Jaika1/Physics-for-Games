@@ -35,24 +35,28 @@ bool PhysicsGame::startup() {
 	srand(time(nullptr));
 
 	// Adding a bunch of spheres to the scene for testing purposes. 
-	for (int i = 0; i < 10; ++i) {
-		m_currentScene->addActor(new Sphere(
-			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f), 
-			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f), 
-			(rand() / (RAND_MAX / 2.0f)) + 1.0f, 
+	for (int i = 0; i < 20; ++i) {
+		Sphere* s = new Sphere(
+			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
+			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),
+			(rand() / (RAND_MAX / 2.0f)) + 1.0f,
 			(rand() / (RAND_MAX / 4.0f)) + 1.0f,
-			vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1)));
+			vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1));
+		s->setKinematic(rand() % 2);
+		m_currentScene->addActor(s);
 	}
 
 	// Adding a bunch of boxes to the scene for testing purposes. 
-	for (int i = 0; i < 10; ++i) {
-		m_currentScene->addActor(new Box(
+	for (int i = 0; i < 20; ++i) {
+		Box* b = new Box(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),
 			(rand() / (RAND_MAX / 2.0f)) + 1.0f,
 			(rand() / (RAND_MAX / 2.0f)) + 1.0f,
 			vec2((rand() / (RAND_MAX / 10.0f)) + 1.0f, (rand() / (RAND_MAX / 10.0f)) + 1.0f),
-			vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1)));
+			vec4(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, rand() / (float)RAND_MAX, 1));
+		b->setKinematic(rand() % 2);
+		m_currentScene->addActor(b);
 	}
 
 	m_currentScene->addActor(new Plane(vec2(0, 1), -53, vec4(0, 1, 0, 1)));
