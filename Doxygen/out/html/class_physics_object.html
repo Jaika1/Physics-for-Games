@@ -102,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae80a0c4668a1bd03b54587235e6274e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">resetPosition</a> ()</td></tr>
 <tr class="memdesc:ae80a0c4668a1bd03b54587235e6274e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently unused, does absolutely nothing.  <a href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">More...</a><br /></td></tr>
 <tr class="separator:ae80a0c4668a1bd03b54587235e6274e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea99045592d157739e83d745c4f89cad"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#aea99045592d157739e83d745c4f89cad">getElasticity</a> () const</td></tr>
+<tr class="memdesc:aea99045592d157739e83d745c4f89cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve this objects elasticity. Modifying this value will not change the elasticity for this object.  <a href="class_physics_object.html#aea99045592d157739e83d745c4f89cad">More...</a><br /></td></tr>
+<tr class="separator:aea99045592d157739e83d745c4f89cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -120,6 +123,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a765d2e70ca15ec011132e8718e610fe9"><td class="memItemLeft" align="right" valign="top">const ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
 <tr class="memdesc:a765d2e70ca15ec011132e8718e610fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type of shape this is. Can only be set by the initializer.  <a href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">More...</a><br /></td></tr>
 <tr class="separator:a765d2e70ca15ec011132e8718e610fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c0056c2efc3669e3498621d9d48b6a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">m_elasticity</a></td></tr>
+<tr class="memdesc:ab9c0056c2efc3669e3498621d9d48b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The elasticity of this object. In short terms, this represents the efficiency how much kinetic energy is maintained after a collision  <a href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">More...</a><br /></td></tr>
+<tr class="separator:ab9c0056c2efc3669e3498621d9d48b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -452,6 +458,34 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="class_box.html#aa9a65215270d48bfc5af6dcd8890f4fd">Box</a>, <a class="el" href="class_rigidbody.html#a3629daf566e932bd61afd3a4a49932f3">Rigidbody</a>, and <a class="el" href="class_plane.html#a49cda9b609047fec55dd4e0f1c04c188">Plane</a>.</p>
+
+</div>
+</div>
+<a id="aea99045592d157739e83d745c4f89cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea99045592d157739e83d745c4f89cad">&#9670;&nbsp;</a></span>getElasticity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PhysicsObject::getElasticity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to retrieve this objects elasticity. Modifying this value will not change the elasticity for this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>This objects elasticity.</dd></dl>
 
 </div>
 </div>
@@ -789,6 +823,30 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab9c0056c2efc3669e3498621d9d48b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c0056c2efc3669e3498621d9d48b6a">&#9670;&nbsp;</a></span>m_elasticity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PhysicsObject::m_elasticity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The elasticity of this object. In short terms, this represents the efficiency how much kinetic energy is maintained after a collision </p>
+
+</div>
+</div>
 <a id="a765d2e70ca15ec011132e8718e610fe9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a765d2e70ca15ec011132e8718e610fe9">&#9670;&nbsp;</a></span>m_shapeID</h2>
 
@@ -819,14 +877,14 @@ Static Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclass_physics_object_html_a01da813a91307401c7cc6a12d93079d9"><div class="ttname"><a href="class_physics_object.html#a01da813a91307401c7cc6a12d93079d9">PhysicsObject::plane2Plane</a></div><div class="ttdeci">static bool plane2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">This function will always return false since planes are always static. This function exists because t...</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:25</div></div>
-<div class="ttc" id="aclass_physics_object_html_aeda4de3fd7918aed0437172fc2fd95b4"><div class="ttname"><a href="class_physics_object.html#aeda4de3fd7918aed0437172fc2fd95b4">PhysicsObject::sphere2Box</a></div><div class="ttdeci">static bool sphere2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a sphere and actor 2 to a box, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:139</div></div>
+<div class="ttc" id="aclass_physics_object_html_aeda4de3fd7918aed0437172fc2fd95b4"><div class="ttname"><a href="class_physics_object.html#aeda4de3fd7918aed0437172fc2fd95b4">PhysicsObject::sphere2Box</a></div><div class="ttdeci">static bool sphere2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a sphere and actor 2 to a box, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:140</div></div>
 <div class="ttc" id="aclass_physics_object_html_ad1d0d373ace4618518fe1c0569fd9766"><div class="ttname"><a href="class_physics_object.html#ad1d0d373ace4618518fe1c0569fd9766">PhysicsObject::plane2Sphere</a></div><div class="ttdeci">static bool plane2Sphere(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a plane and actor 2 to a sphere, then checks for a collision between them...</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:31</div></div>
-<div class="ttc" id="aclass_physics_object_html_afbc1a6e6b8809a4897f473c19224921a"><div class="ttname"><a href="class_physics_object.html#afbc1a6e6b8809a4897f473c19224921a">PhysicsObject::sphere2Plane</a></div><div class="ttdeci">static bool sphere2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a sphere and actor 2 to a plane, then checks for a collision between them...</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:108</div></div>
-<div class="ttc" id="aclass_physics_object_html_af66e118ec45f71243505ac1d50c82cb6"><div class="ttname"><a href="class_physics_object.html#af66e118ec45f71243505ac1d50c82cb6">PhysicsObject::box2Plane</a></div><div class="ttdeci">static bool box2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a box and actor 2 to a plane, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:175</div></div>
-<div class="ttc" id="aclass_physics_object_html_ace8ca2b4d7abf29372913a56d7271033"><div class="ttname"><a href="class_physics_object.html#ace8ca2b4d7abf29372913a56d7271033">PhysicsObject::plane2Box</a></div><div class="ttdeci">static bool plane2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a plane and actor 2 to a box, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:58</div></div>
-<div class="ttc" id="aclass_physics_object_html_a1d78214810b7010c5a5dd130f65cc99e"><div class="ttname"><a href="class_physics_object.html#a1d78214810b7010c5a5dd130f65cc99e">PhysicsObject::box2Sphere</a></div><div class="ttdeci">static bool box2Sphere(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a box and actor 2 to a sphere, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:181</div></div>
-<div class="ttc" id="aclass_physics_object_html_ac77b14dd896701ee23631280b0b05478"><div class="ttname"><a href="class_physics_object.html#ac77b14dd896701ee23631280b0b05478">PhysicsObject::sphere2Sphere</a></div><div class="ttdeci">static bool sphere2Sphere(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast both actors to spheres and checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:114</div></div>
-<div class="ttc" id="aclass_physics_object_html_a4720f0745be19f4f3339fe489e158bd1"><div class="ttname"><a href="class_physics_object.html#a4720f0745be19f4f3339fe489e158bd1">PhysicsObject::box2Box</a></div><div class="ttdeci">static bool box2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast both actors to boxes and checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:187</div></div>
+<div class="ttc" id="aclass_physics_object_html_afbc1a6e6b8809a4897f473c19224921a"><div class="ttname"><a href="class_physics_object.html#afbc1a6e6b8809a4897f473c19224921a">PhysicsObject::sphere2Plane</a></div><div class="ttdeci">static bool sphere2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a sphere and actor 2 to a plane, then checks for a collision between them...</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:109</div></div>
+<div class="ttc" id="aclass_physics_object_html_af66e118ec45f71243505ac1d50c82cb6"><div class="ttname"><a href="class_physics_object.html#af66e118ec45f71243505ac1d50c82cb6">PhysicsObject::box2Plane</a></div><div class="ttdeci">static bool box2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a box and actor 2 to a plane, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:177</div></div>
+<div class="ttc" id="aclass_physics_object_html_ace8ca2b4d7abf29372913a56d7271033"><div class="ttname"><a href="class_physics_object.html#ace8ca2b4d7abf29372913a56d7271033">PhysicsObject::plane2Box</a></div><div class="ttdeci">static bool plane2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a plane and actor 2 to a box, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:59</div></div>
+<div class="ttc" id="aclass_physics_object_html_a1d78214810b7010c5a5dd130f65cc99e"><div class="ttname"><a href="class_physics_object.html#a1d78214810b7010c5a5dd130f65cc99e">PhysicsObject::box2Sphere</a></div><div class="ttdeci">static bool box2Sphere(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast actor 1 to a box and actor 2 to a sphere, then checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:183</div></div>
+<div class="ttc" id="aclass_physics_object_html_ac77b14dd896701ee23631280b0b05478"><div class="ttname"><a href="class_physics_object.html#ac77b14dd896701ee23631280b0b05478">PhysicsObject::sphere2Sphere</a></div><div class="ttdeci">static bool sphere2Sphere(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast both actors to spheres and checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:115</div></div>
+<div class="ttc" id="aclass_physics_object_html_a4720f0745be19f4f3339fe489e158bd1"><div class="ttname"><a href="class_physics_object.html#a4720f0745be19f4f3339fe489e158bd1">PhysicsObject::box2Box</a></div><div class="ttdeci">static bool box2Box(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">Attempts to cast both actors to boxes and checks for a collision between them.</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:189</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

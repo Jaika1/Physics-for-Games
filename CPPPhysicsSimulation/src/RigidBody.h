@@ -37,6 +37,7 @@ public:
 	/// <param name="actor2">The other object of which the interaction occured with.</param>
 	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr, float pen = 0); // FILL IN SUMMARY
 
+
 	/// <summary>
 	/// Used to retrieve the current position. Modifying this value will not change this objects position.
 	/// </summary>

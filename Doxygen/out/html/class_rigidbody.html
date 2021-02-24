@@ -97,12 +97,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a77d772b26b1c35ceade056fb2ea1ae7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a77d772b26b1c35ceade056fb2ea1ae7a">applyForce</a> (glm::vec2 force, glm::vec2 position)</td></tr>
 <tr class="memdesc:a77d772b26b1c35ceade056fb2ea1ae7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantly applies a force to the object, accounting for its mass.  <a href="class_rigidbody.html#a77d772b26b1c35ceade056fb2ea1ae7a">More...</a><br /></td></tr>
 <tr class="separator:a77d772b26b1c35ceade056fb2ea1ae7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac9b779a5b0643db6ebf9de286950b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#acac9b779a5b0643db6ebf9de286950b9">resolveCollision</a> (<a class="el" href="class_rigidbody.html">Rigidbody</a> *actor2, glm::vec2 contact, glm::vec2 *collisionNormal=nullptr)</td></tr>
-<tr class="memdesc:acac9b779a5b0643db6ebf9de286950b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a collision between this body and another.  <a href="class_rigidbody.html#acac9b779a5b0643db6ebf9de286950b9">More...</a><br /></td></tr>
-<tr class="separator:acac9b779a5b0643db6ebf9de286950b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddb622b4ac787c34072ba19fc35d003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a9ddb622b4ac787c34072ba19fc35d003">resolveCollision</a> (<a class="el" href="class_rigidbody.html">Rigidbody</a> *actor2, glm::vec2 contact, glm::vec2 *collisionNormal=nullptr, float pen=0)</td></tr>
+<tr class="memdesc:a9ddb622b4ac787c34072ba19fc35d003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a collision between this body and another.  <a href="class_rigidbody.html#a9ddb622b4ac787c34072ba19fc35d003">More...</a><br /></td></tr>
+<tr class="separator:a9ddb622b4ac787c34072ba19fc35d003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98027cc4236760cb9f79701786c72c29"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a98027cc4236760cb9f79701786c72c29">getPosition</a> () const</td></tr>
 <tr class="memdesc:a98027cc4236760cb9f79701786c72c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve the current position. Modifying this value will not change this objects position.  <a href="class_rigidbody.html#a98027cc4236760cb9f79701786c72c29">More...</a><br /></td></tr>
 <tr class="separator:a98027cc4236760cb9f79701786c72c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd93fea5435785bbb0bae2c22b26577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#abdd93fea5435785bbb0bae2c22b26577">setPosition</a> (glm::vec2 position)</td></tr>
+<tr class="memdesc:abdd93fea5435785bbb0bae2c22b26577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set this objects position.  <a href="class_rigidbody.html#abdd93fea5435785bbb0bae2c22b26577">More...</a><br /></td></tr>
+<tr class="separator:abdd93fea5435785bbb0bae2c22b26577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151e495d37cdafd47ea703b0ebdf51d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a151e495d37cdafd47ea703b0ebdf51d8">getKinematic</a> () const</td></tr>
+<tr class="memdesc:a151e495d37cdafd47ea703b0ebdf51d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves whether or not this object is kinematic. Modifying the returned value will not change the actual value.  <a href="class_rigidbody.html#a151e495d37cdafd47ea703b0ebdf51d8">More...</a><br /></td></tr>
+<tr class="separator:a151e495d37cdafd47ea703b0ebdf51d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1305ba988d533979d9f6a88916c65382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a1305ba988d533979d9f6a88916c65382">setKinematic</a> (bool kinematic)</td></tr>
+<tr class="memdesc:a1305ba988d533979d9f6a88916c65382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set whether this object is kinematic or not.  <a href="class_rigidbody.html#a1305ba988d533979d9f6a88916c65382">More...</a><br /></td></tr>
+<tr class="separator:a1305ba988d533979d9f6a88916c65382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10aca411b135decbc600436c42332d0b"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a10aca411b135decbc600436c42332d0b">getVelocity</a> () const</td></tr>
 <tr class="memdesc:a10aca411b135decbc600436c42332d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve the current velocity. Modifying this value will not change this objects velocity.  <a href="class_rigidbody.html#a10aca411b135decbc600436c42332d0b">More...</a><br /></td></tr>
 <tr class="separator:a10aca411b135decbc600436c42332d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae80a0c4668a1bd03b54587235e6274e0 inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">resetPosition</a> ()</td></tr>
 <tr class="memdesc:ae80a0c4668a1bd03b54587235e6274e0 inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently unused, does absolutely nothing.  <a href="class_physics_object.html#ae80a0c4668a1bd03b54587235e6274e0">More...</a><br /></td></tr>
 <tr class="separator:ae80a0c4668a1bd03b54587235e6274e0 inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea99045592d157739e83d745c4f89cad inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#aea99045592d157739e83d745c4f89cad">getElasticity</a> () const</td></tr>
+<tr class="memdesc:aea99045592d157739e83d745c4f89cad inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve this objects elasticity. Modifying this value will not change the elasticity for this object.  <a href="class_physics_object.html#aea99045592d157739e83d745c4f89cad">More...</a><br /></td></tr>
+<tr class="separator:aea99045592d157739e83d745c4f89cad inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -167,10 +179,16 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ae630f5d7497c74c351b1857f61523433"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#ae630f5d7497c74c351b1857f61523433">m_angularDrag</a></td></tr>
 <tr class="memdesc:ae630f5d7497c74c351b1857f61523433"><td class="mdescLeft">&#160;</td><td class="mdescRight">This objects angular drag.  <a href="class_rigidbody.html#ae630f5d7497c74c351b1857f61523433">More...</a><br /></td></tr>
 <tr class="separator:ae630f5d7497c74c351b1857f61523433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72850b1f6eb81d7ff580b4b05b699169"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a72850b1f6eb81d7ff580b4b05b699169">m_isKinematic</a></td></tr>
+<tr class="memdesc:a72850b1f6eb81d7ff580b4b05b699169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this object is static or not.  <a href="class_rigidbody.html#a72850b1f6eb81d7ff580b4b05b699169">More...</a><br /></td></tr>
+<tr class="separator:a72850b1f6eb81d7ff580b4b05b699169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_physics_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_physics_object.html">PhysicsObject</a></td></tr>
 <tr class="memitem:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">const ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
 <tr class="memdesc:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type of shape this is. Can only be set by the initializer.  <a href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">More...</a><br /></td></tr>
 <tr class="separator:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c0056c2efc3669e3498621d9d48b6a inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">m_elasticity</a></td></tr>
+<tr class="memdesc:ab9c0056c2efc3669e3498621d9d48b6a inherit pro_attribs_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The elasticity of this object. In short terms, this represents the efficiency how much kinetic energy is maintained after a collision  <a href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">More...</a><br /></td></tr>
+<tr class="separator:ab9c0056c2efc3669e3498621d9d48b6a inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -424,6 +442,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a151e495d37cdafd47ea703b0ebdf51d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151e495d37cdafd47ea703b0ebdf51d8">&#9670;&nbsp;</a></span>getKinematic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Rigidbody::getKinematic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves whether or not this object is kinematic. Modifying the returned value will not change the actual value. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool representing whether or not this object is kinematic.</dd></dl>
+
+</div>
+</div>
 <a id="a8bda22379068d2a1d94471de2755572b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8bda22379068d2a1d94471de2755572b">&#9670;&nbsp;</a></span>getKineticEnergy()</h2>
 
@@ -632,8 +678,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acac9b779a5b0643db6ebf9de286950b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acac9b779a5b0643db6ebf9de286950b9">&#9670;&nbsp;</a></span>resolveCollision()</h2>
+<a id="a9ddb622b4ac787c34072ba19fc35d003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ddb622b4ac787c34072ba19fc35d003">&#9670;&nbsp;</a></span>resolveCollision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +700,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec2 *&#160;</td>
-          <td class="paramname"><em>collisionNormal</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>collisionNormal</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pen</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -668,6 +720,74 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">actor2</td><td>The other object of which the interaction occured with.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1305ba988d533979d9f6a88916c65382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1305ba988d533979d9f6a88916c65382">&#9670;&nbsp;</a></span>setKinematic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rigidbody::setKinematic </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>kinematic</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to set whether this object is kinematic or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kinematic</td><td>True to become kinematic; otherwise false</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abdd93fea5435785bbb0bae2c22b26577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd93fea5435785bbb0bae2c22b26577">&#9670;&nbsp;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rigidbody::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec2&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to set this objects position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The new position for this object.</td></tr>
   </table>
   </dd>
 </dl>
@@ -720,6 +840,30 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This objects current angular velocity. </p>
+
+</div>
+</div>
+<a id="a72850b1f6eb81d7ff580b4b05b699169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72850b1f6eb81d7ff580b4b05b699169">&#9670;&nbsp;</a></span>m_isKinematic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Rigidbody::m_isKinematic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether this object is static or not. </p>
 
 </div>
 </div>

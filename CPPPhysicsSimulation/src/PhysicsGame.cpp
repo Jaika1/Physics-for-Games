@@ -10,6 +10,7 @@
 #include <Input.h>
 #include <time.h>
 #include "Box.h"
+#include "Spring.h"
 
 using namespace aie;
 using namespace glm;
@@ -35,7 +36,7 @@ bool PhysicsGame::startup() {
 	srand(time(nullptr));
 
 	// Adding a bunch of spheres to the scene for testing purposes. 
-	for (int i = 0; i < 20; ++i) {
+	for (int i = 0; i < 0; ++i) {
 		Sphere* s = new Sphere(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),
@@ -47,7 +48,7 @@ bool PhysicsGame::startup() {
 	}
 
 	// Adding a bunch of boxes to the scene for testing purposes. 
-	for (int i = 0; i < 20; ++i) {
+	for (int i = 0; i < 0; ++i) {
 		Box* b = new Box(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),
@@ -59,12 +60,22 @@ bool PhysicsGame::startup() {
 		m_currentScene->addActor(b);
 	}
 
+	Sphere* s1 = new Sphere(glm::vec2(7, 0), glm::vec2(0, 0), 1, 3, glm::vec4(1, 1, 1, 1));
+	s1->setKinematic(false);
+	m_currentScene->addActor(s1);
+
+	Sphere* s2 = new Sphere(glm::vec2(0, 0), glm::vec2(0, 0), 1, 3, glm::vec4(1, 1, 1, 1));
+	s2->setKinematic(true);
+	m_currentScene->addActor(s2);
+
+	m_currentScene->addActor(new Spring(s1, s2, 5.0f, 10.0f));
+
 	m_currentScene->addActor(new Plane(vec2(0, 1), -53, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(0, -1), -53, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(1, 0), -97, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(-1, 0), -97, vec4(0, 1, 0, 1)));
 
-	m_currentScene->setGravity({ 0, -9.1f });
+	m_currentScene->setGravity({ 0, -9.8f });
 
 	// Return true for a successful startup.
 	return true;

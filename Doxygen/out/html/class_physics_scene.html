@@ -89,6 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f9428a5e67c53f56d0254cf390424c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_scene.html#a8f9428a5e67c53f56d0254cf390424c7">draw</a> ()</td></tr>
 <tr class="memdesc:a8f9428a5e67c53f56d0254cf390424c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the draw function on every actor in the scene.  <a href="class_physics_scene.html#a8f9428a5e67c53f56d0254cf390424c7">More...</a><br /></td></tr>
 <tr class="separator:a8f9428a5e67c53f56d0254cf390424c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff0f5ffb8b27f25f5c9ee9fa380c1da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_scene.html#abff0f5ffb8b27f25f5c9ee9fa380c1da">ApplyContactForces</a> (<a class="el" href="class_rigidbody.html">Rigidbody</a> *body1, <a class="el" href="class_rigidbody.html">Rigidbody</a> *body2, glm::vec2 norm, float pen)</td></tr>
+<tr class="memdesc:abff0f5ffb8b27f25f5c9ee9fa380c1da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to apply a displacement to 2 actors given their penetration.  <a href="class_physics_scene.html#abff0f5ffb8b27f25f5c9ee9fa380c1da">More...</a><br /></td></tr>
+<tr class="separator:abff0f5ffb8b27f25f5c9ee9fa380c1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c922d761eec1611f8986eead9c4251e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_scene.html#a5c922d761eec1611f8986eead9c4251e">setGravity</a> (const glm::vec2 gravity)</td></tr>
 <tr class="memdesc:a5c922d761eec1611f8986eead9c4251e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the gravity vector to the given value.  <a href="class_physics_scene.html#a5c922d761eec1611f8986eead9c4251e">More...</a><br /></td></tr>
 <tr class="separator:a5c922d761eec1611f8986eead9c4251e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +140,57 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">actor</td><td>The actor to add to the scene.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abff0f5ffb8b27f25f5c9ee9fa380c1da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff0f5ffb8b27f25f5c9ee9fa380c1da">&#9670;&nbsp;</a></span>ApplyContactForces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsScene::ApplyContactForces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td>
+          <td class="paramname"><em>body1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td>
+          <td class="paramname"><em>body2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec2&#160;</td>
+          <td class="paramname"><em>norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to apply a displacement to 2 actors given their penetration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">body1</td><td>Actor #1 involved in the collision.</td></tr>
+    <tr><td class="paramname">body2</td><td>Actor #2 involved in the collision.</td></tr>
+    <tr><td class="paramname">norm</td><td>The collision normal.</td></tr>
+    <tr><td class="paramname">pen</td><td>The penetration value.</td></tr>
   </table>
   </dd>
 </dl>

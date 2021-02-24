@@ -3,7 +3,7 @@
 #include "Plane.h"
 #include "Box.h"
 
-collisionCheck_t PhysicsObject::collisionCheckFunctionArray[COLLISIONROWSIZE * COLLISIONROWSIZE] = 
+collisionCheck_t PhysicsObject::collisionCheckFunctionArray[SHAPE_COUNT * SHAPE_COUNT] = 
 { 
 	&PhysicsObject::plane2Plane, &PhysicsObject::plane2Sphere, &PhysicsObject::plane2Box,
 	&PhysicsObject::sphere2Plane, &PhysicsObject::sphere2Sphere, &PhysicsObject::sphere2Box,
@@ -16,8 +16,10 @@ bool PhysicsObject::checkCollision(PhysicsObject* actor1, PhysicsObject* actor2)
 	ShapeType a1shape = actor1->m_shapeID;
 	ShapeType a2shape = actor2->m_shapeID;
 
+	if (a1shape < 0 || a2shape < 0) return false;
+
 	// Call the appropriate function to handle checking for and managing a collision between the 2 different shapes.
-	return collisionCheckFunctionArray[(a1shape * COLLISIONROWSIZE) + a2shape](actor1, actor2);
+	return collisionCheckFunctionArray[(a1shape * SHAPE_COUNT) + a2shape](actor1, actor2);
 }
 
 #pragma region Collision Check Functions

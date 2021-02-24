@@ -2,6 +2,8 @@
 #include <glm.hpp>
 #include "PhysicsObject.h"
 #include "RigidBody.h"
+#include <Input.h>
+#include "Sphere.h"
 
 PhysicsScene::PhysicsScene() : m_gravity(glm::vec2(0.0f, 0.0f)), m_timeStep(0.01f)
 {
@@ -44,6 +46,11 @@ void PhysicsScene::update(float deltaTime)
 	static float timePassed = 0.0f;
 	// Add deltaTime to our static variable.
 	timePassed += deltaTime;
+
+	if (aie::Input::getInstance()->isKeyDown(aie::INPUT_KEY_SPACE)) {
+		Sphere* s2 = new Sphere(glm::vec2(7, 0), glm::vec2(rand() / (RAND_MAX / 8.0f), rand() / (RAND_MAX / 8.0f)), 1, 3, glm::vec4(1, 1, 1, 1));
+		addActor(s2);
+	}
 
 	// Keep updating our actors until timePassed is less than m_timeStep.
 	for (; timePassed >= m_timeStep; timePassed -= m_timeStep)

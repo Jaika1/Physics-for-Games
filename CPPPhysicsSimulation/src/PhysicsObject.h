@@ -13,10 +13,11 @@ typedef bool (*collisionCheck_t)(PhysicsObject* actor1, PhysicsObject* actor2);
 /// Contains entries for each shape type, to be used as IDs for discerning each one. Also has an entry for retreiving how many different shape types there are.
 /// </summary>
 enum ShapeType {
+	JOINT = -1,
 	PLANE = 0,
 	SPHERE,
 	BOX,
-	COLLISIONROWSIZE
+	SHAPE_COUNT
 };
 
 /// <summary>

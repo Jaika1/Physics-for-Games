@@ -6,7 +6,7 @@
 #define MIN_ANGULAR_THRESHOLD MIN_LINEAR_THRESHOLD
 
 Rigidbody::Rigidbody(ShapeType shapeID, glm::vec2 position, glm::vec2 velocity, float rotation, float mass) : PhysicsObject(shapeID),
-m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f), m_linearDrag(0.2f), m_angularDrag(0.2f), m_isKinematic(false)
+m_position(position), m_velocity(velocity), m_rotation(rotation), m_mass(mass), m_angularVelocity(0.0f), m_linearDrag(1.0f), m_angularDrag(1.0f), m_isKinematic(false)
 {
 	// The code above sets up this instance with an initial position, velocity, rotation and mass, along with
 	// passing through shapeID to the inherited PhysicsObject.
@@ -32,7 +32,7 @@ void Rigidbody::fixedUpdate(glm::vec2 gravity, float timeStep)
 	m_velocity -= m_velocity * m_linearDrag * timeStep;
 	m_angularVelocity -= m_angularVelocity * m_angularDrag * timeStep;
 
-	if (glm::length(m_velocity) < MIN_LINEAR_THRESHOLD) m_velocity = glm::vec2(0.0f);
+	if (glm::length(m_velocity) < MIN_LINEAR_THRESHOLD && length(m_velocity) < length(gravity) * m_linearDrag * timeStep) m_velocity = glm::vec2(0.0f);
 	if (fabsf(m_angularVelocity) < MIN_ANGULAR_THRESHOLD) m_angularVelocity = 0.0f;
 
 	// Then, add the current velocity in units/s multiplied by the amount of time per step in seconds to the current position.
