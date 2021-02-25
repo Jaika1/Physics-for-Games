@@ -93,6 +93,12 @@ public:
 	/// </summary>
 	/// <returns>This objects angular drag.</returns>
 	float getAngularDrag() const { return m_angularDrag; }
+	/// <summary>
+	/// Converts the given local-space position to world space.
+	/// </summary>
+	/// <param name="position">The position to convert from local to world space.</param>
+	/// <returns>The given postition represented in world-space.</returns>
+	glm::vec2 toWorld(glm::vec2 lpos) { return getPosition() + lpos; }
 
 	/// <summary>
 	/// Calculates and returns the kinetic energy exerted by this object.

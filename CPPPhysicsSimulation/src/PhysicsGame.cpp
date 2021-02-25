@@ -60,15 +60,17 @@ bool PhysicsGame::startup() {
 		m_currentScene->addActor(b);
 	}
 
-	Sphere* s1 = new Sphere(glm::vec2(7, 0), glm::vec2(0, 0), 1, 3, glm::vec4(1, 1, 1, 1));
-	s1->setKinematic(false);
-	m_currentScene->addActor(s1);
+	Sphere* sph = new Sphere(glm::vec2(0), glm::vec2(0), 1, 1, glm::vec4(1, 1, 1, 1));
+	sph->setKinematic(true);
+	m_currentScene->addActor(sph);
 
-	Sphere* s2 = new Sphere(glm::vec2(0, 0), glm::vec2(0, 0), 1, 3, glm::vec4(1, 1, 1, 1));
-	s2->setKinematic(true);
-	m_currentScene->addActor(s2);
-
-	m_currentScene->addActor(new Spring(s1, s2, 5.0f, 10.0f));
+	for (int i = 0; i < 10; ++i)
+	{
+		Sphere* sph2 = new Sphere(glm::vec2(0, -3*i), glm::vec2(0), 1, 1, glm::vec4(1, 1, 1, 1));
+		m_currentScene->addActor(new Spring(sph2, sph, 3.0f, 10.0f));
+		m_currentScene->addActor(sph2);
+		sph = sph2;
+	}
 
 	m_currentScene->addActor(new Plane(vec2(0, 1), -53, vec4(0, 1, 0, 1)));
 	m_currentScene->addActor(new Plane(vec2(0, -1), -53, vec4(0, 1, 0, 1)));
