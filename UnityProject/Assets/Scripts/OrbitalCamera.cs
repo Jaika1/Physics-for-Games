@@ -23,7 +23,7 @@ public class OrbitalCamera : MonoBehaviour
         float dx = Input.GetAxis("Mouse Y") * Sensitivity;
         float dy = Input.GetAxis("Mouse X") * Sensitivity;
 
-        angles.x = Mathf.Clamp(angles.x - dx, -20, 85);
+        angles.x = Mathf.Clamp(angles.x - dx, -60, 85);
         angles.y += dy;
 
         transform.eulerAngles = angles;
