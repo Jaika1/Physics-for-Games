@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
             velocity.z = delta.z;
         }
 
+        if (moveInput.magnitude > 0.0f)
+        {
+            transform.forward = camForward;
+        }
+
         if (controller.isGrounded)
         {
             if (velocity.y < 0) velocity.y = 0;
