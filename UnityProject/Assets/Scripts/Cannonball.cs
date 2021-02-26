@@ -21,11 +21,9 @@ public class Cannonball : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (rBody.isKinematic)
-            {
-                rBody.isKinematic = false;
+            if (rBody.isKinematic) rBody.isKinematic = false;
+            if (rBody.velocity.magnitude == 0.0f)
                 rBody.AddForce(transform.forward * Speed, ForceMode.VelocityChange);
-            }
             else
                 rBody.AddForce(rBody.velocity.normalized * Speed, ForceMode.VelocityChange);
         }
