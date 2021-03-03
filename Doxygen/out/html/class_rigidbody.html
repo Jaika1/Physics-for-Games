@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb60cb4744cfaea0989685c9f5d78272"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#aeb60cb4744cfaea0989685c9f5d78272">getAngularDrag</a> () const</td></tr>
 <tr class="memdesc:aeb60cb4744cfaea0989685c9f5d78272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve this objects angular drag. Modifying this value will not change the angular drag for this object.  <a href="class_rigidbody.html#aeb60cb4744cfaea0989685c9f5d78272">More...</a><br /></td></tr>
 <tr class="separator:aeb60cb4744cfaea0989685c9f5d78272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8cc8af4b5d554d724bdc3b046a6395"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#aaf8cc8af4b5d554d724bdc3b046a6395">toWorld</a> (glm::vec2 lpos)</td></tr>
+<tr class="memdesc:aaf8cc8af4b5d554d724bdc3b046a6395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given local-space position to world space.  <a href="class_rigidbody.html#aaf8cc8af4b5d554d724bdc3b046a6395">More...</a><br /></td></tr>
+<tr class="separator:aaf8cc8af4b5d554d724bdc3b046a6395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bda22379068d2a1d94471de2755572b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a8bda22379068d2a1d94471de2755572b">getKineticEnergy</a> ()</td></tr>
 <tr class="memdesc:a8bda22379068d2a1d94471de2755572b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the kinetic energy exerted by this object.  <a href="class_rigidbody.html#a8bda22379068d2a1d94471de2755572b">More...</a><br /></td></tr>
 <tr class="separator:a8bda22379068d2a1d94471de2755572b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -791,6 +794,41 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aaf8cc8af4b5d554d724bdc3b046a6395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8cc8af4b5d554d724bdc3b046a6395">&#9670;&nbsp;</a></span>toWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 Rigidbody::toWorld </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec2&#160;</td>
+          <td class="paramname"><em>lpos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the given local-space position to world space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to convert from local to world space.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The given postition represented in world-space.</dd></dl>
 
 </div>
 </div>
