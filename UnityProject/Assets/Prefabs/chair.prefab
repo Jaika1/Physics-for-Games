@@ -336,6 +336,8 @@ GameObject:
   - component: {fileID: 7756969923678216320}
   - component: {fileID: 7756969923675962947}
   - component: {fileID: 7756969923675962956}
+  - component: {fileID: -8098034980113551211}
+  - component: {fileID: 5456040854716780310}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -441,4 +443,30 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &-8098034980113551211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756969923675962946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef781916c6c7ae04ebbd8150bbec9df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosiveForce: 10
+--- !u!65 &5456040854716780310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756969923675962946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.81, y: 0.73, z: 1.06}
+  m_Center: {x: -0.00000008940697, y: -0.0024394994, z: 0.42660376}
