@@ -17,7 +17,7 @@ public class RagdollScript : MonoBehaviour
         ragdollBodies = ModelAnimator.GetComponentsInChildren<Rigidbody>(true);
     }
 
-    public void EnableRagdoll(float explosiveForce = 0.0f)
+    public void EnableRagdoll(Vector3 midpoint, float? explosiveForce)
     {
         ModelAnimator.enabled = false;
         Array.ForEach(ragdollBodies, r => r.isKinematic = false);
@@ -30,15 +30,18 @@ public class RagdollScript : MonoBehaviour
         }
         if (RagdollVolume) RagdollVolume.enabled = true;
 
-        if (explosiveForce > 0.0f)
+        if (explosiveForce.HasValue)
         {
-            Vector3 midpoint = transform.position;
             foreach (Rigidbody r in ragdollBodies)
             {
-                r.AddExplosionForce(explosiveForce, midpoint, 3.0f, 0.0f, ForceMode.VelocityChange);
+                r.AddExplosionForce(explosiveForce.Value, midpoint, 50.0f, 0.0f, ForceMode.VelocityChange);
             }
         }
 
         gameObject.SetActive(false);
     }
+
+    public void EnableRagdoll() => EnableRagdoll(Vector3.zero, 0.0f);
+
+    public void EnableRagdoll(float explosiveForce) => EnableRagdoll(transform.position, explosiveForce);
 }
