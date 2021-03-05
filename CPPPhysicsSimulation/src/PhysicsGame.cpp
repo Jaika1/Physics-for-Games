@@ -36,7 +36,7 @@ bool PhysicsGame::startup() {
 	srand(time(nullptr));
 
 	// Adding a bunch of spheres to the scene for testing purposes. 
-	for (int i = 0; i < 0; ++i) {
+	for (int i = 0; i < 10; ++i) {
 		Sphere* s = new Sphere(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),
@@ -48,7 +48,7 @@ bool PhysicsGame::startup() {
 	}
 
 	// Adding a bunch of boxes to the scene for testing purposes. 
-	for (int i = 0; i < 0; ++i) {
+	for (int i = 0; i < 10; ++i) {
 		Box* b = new Box(
 			vec2((rand() / (RAND_MAX / 170.0f)) - 85.0f, (rand() / (RAND_MAX / 90.0f)) - 45.0f),
 			vec2((rand() / (RAND_MAX / 20.0f)) - 10.0f, (rand() / (RAND_MAX / 20.0f)) - 10.0f),

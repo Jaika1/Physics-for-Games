@@ -81,14 +81,17 @@ void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2
 		glm::vec2 force = (1.0f + elasticity) * mass1 * mass2 / (mass1 + mass2) * (v1 - v2) * normal;
 
 
+#if _DEBUG
 		// Get the total sum of the amount of kinetic energy storred by these 2 bodies and store it for
 		// checking after force has been applied.
 		float kePre = getKineticEnergy() + actor2->getKineticEnergy();
+#endif
 
 		//Apply equal and opposite forces
 		applyForce(-force, contact - m_position);
 		actor2->applyForce(force, contact - actor2->m_position);
 
+#if _DEBUG
 		float kePost = getKineticEnergy() + actor2->getKineticEnergy();
 
 		// Calculate the difference in kinetic energy from pre to post and check is the change is >1%, as
@@ -97,6 +100,7 @@ void Rigidbody::resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2
 		if (keDiff > fabsf(kePre) * 0.01f) {
 			printf("Kinetic energy discrepancy is >1%! (Rigidbody resolve)\n\r");
 		}
+#endif
 
 		if (pen > 0)
 		{

@@ -46,12 +46,15 @@ void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 
 	glm::vec2 force = m_normal * energy;
 
+#if _DEBUG
 	// Get the total sum of the amount of kinetic energy storred by these 2 bodies and store it for
 	// checking after force has been applied.
 	float kePre = actor2->getKineticEnergy();
+#endif
 
 	actor2->applyForce(force, contact - actor2->getPosition());
 
+#if _DEBUG
 	float kePost = actor2->getKineticEnergy();
 
 	// Calculate the difference in kinetic energy from pre to post and check is the change is >1%, as
@@ -60,6 +63,7 @@ void Plane::resolveCollision(Rigidbody* actor2, glm::vec2 contact)
 	if (keDiff > fabsf(kePre) * 0.01f) {
 		printf("Kinetic energy discrepancy is >1%! (Plane resolve collision)\n\r");
 	}
+#endif
 
 	float penetration = glm::dot(contact, m_normal) - m_distanceToOrigin;
 	GameInstance->getScene()->ApplyContactForces(actor2, nullptr, m_normal, penetration);

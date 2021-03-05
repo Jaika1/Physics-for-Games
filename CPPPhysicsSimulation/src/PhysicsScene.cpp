@@ -47,7 +47,7 @@ void PhysicsScene::update(float deltaTime)
 	// Add deltaTime to our static variable.
 	timePassed += deltaTime;
 
-	if (aie::Input::getInstance()->isKeyDown(aie::INPUT_KEY_SPACE)) {
+	if (aie::Input::getInstance()->wasKeyPressed(aie::INPUT_KEY_SPACE)) {
 		Sphere* s2 = new Sphere(glm::vec2(7, 0), glm::vec2(rand() / (RAND_MAX / 8.0f), rand() / (RAND_MAX / 8.0f)), 1, 3, glm::vec4(1, 1, 1, 1));
 		addActor(s2);
 	}
