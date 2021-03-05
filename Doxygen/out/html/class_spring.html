@@ -69,6 +69,8 @@ $(function() {
 <div class="title">Spring Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_spring_8h_source.html">Spring.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Spring:</div>
 <div class="dyncontent">
@@ -84,9 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada015296a691c3281b4cea2a2ebeaf3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#ada015296a691c3281b4cea2a2ebeaf3a">Spring</a> (<a class="el" href="class_rigidbody.html">Rigidbody</a> *body1, <a class="el" href="class_rigidbody.html">Rigidbody</a> *body2, float restLength, float springCoefficient, float damping=0.1f, glm::vec2 contact1=glm::vec2(0, 0), glm::vec2 contact2=glm::vec2(0, 0))</td></tr>
 <tr class="memdesc:ada015296a691c3281b4cea2a2ebeaf3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">do this please ty  <a href="class_spring.html#ada015296a691c3281b4cea2a2ebeaf3a">More...</a><br /></td></tr>
 <tr class="separator:ada015296a691c3281b4cea2a2ebeaf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d6a1b3ffce1aaee4c7ee28f71485f05"><td class="memItemLeft" align="right" valign="top"><a id="a5d6a1b3ffce1aaee4c7ee28f71485f05"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a5d6a1b3ffce1aaee4c7ee28f71485f05">fixedUpdate</a> (glm::vec2 gravity, float timeStep) override</td></tr>
-<tr class="memdesc:a5d6a1b3ffce1aaee4c7ee28f71485f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physics update, called when each fixed time-step has elapsed as defined in <a class="el" href="class_physics_scene.html" title="A scene to be updated and rendered by PhysicsGame. Holds, updates and renders a collection of Physics...">PhysicsScene</a>. Must be overridden. <br /></td></tr>
+<tr class="memitem:a5d6a1b3ffce1aaee4c7ee28f71485f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a5d6a1b3ffce1aaee4c7ee28f71485f05">fixedUpdate</a> (glm::vec2 gravity, float timeStep) override</td></tr>
+<tr class="memdesc:a5d6a1b3ffce1aaee4c7ee28f71485f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physics update, called when each fixed time-step has elapsed as defined in <a class="el" href="class_physics_scene.html" title="A scene to be updated and rendered by PhysicsGame. Holds, updates and renders a collection of Physics...">PhysicsScene</a>. Must be overridden.  <a href="class_spring.html#a5d6a1b3ffce1aaee4c7ee28f71485f05">More...</a><br /></td></tr>
 <tr class="separator:a5d6a1b3ffce1aaee4c7ee28f71485f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7aec269559eb56fc4afb09b42012266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#af7aec269559eb56fc4afb09b42012266">draw</a> () override</td></tr>
 <tr class="memdesc:af7aec269559eb56fc4afb09b42012266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues the object in question for drawing. Must be overriden.  <a href="class_spring.html#af7aec269559eb56fc4afb09b42012266">More...</a><br /></td></tr>
@@ -101,29 +102,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a686013a562bf1fb09989b701ceb2f94c"><td class="memItemLeft" align="right" valign="top"><a id="a686013a562bf1fb09989b701ceb2f94c"></a>
-<a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_body1</b></td></tr>
+<tr class="memitem:a686013a562bf1fb09989b701ceb2f94c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a686013a562bf1fb09989b701ceb2f94c">m_body1</a></td></tr>
 <tr class="separator:a686013a562bf1fb09989b701ceb2f94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f1033990321808a28275cada250b9c"><td class="memItemLeft" align="right" valign="top"><a id="ad3f1033990321808a28275cada250b9c"></a>
-<a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_body2</b></td></tr>
+<tr class="memitem:ad3f1033990321808a28275cada250b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#ad3f1033990321808a28275cada250b9c">m_body2</a></td></tr>
 <tr class="separator:ad3f1033990321808a28275cada250b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729899a089c84dd4d8294a8f6783e30b"><td class="memItemLeft" align="right" valign="top"><a id="a729899a089c84dd4d8294a8f6783e30b"></a>
-glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><b>m_contact1</b></td></tr>
+<tr class="memitem:a729899a089c84dd4d8294a8f6783e30b"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a729899a089c84dd4d8294a8f6783e30b">m_contact1</a></td></tr>
 <tr class="separator:a729899a089c84dd4d8294a8f6783e30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7556ad48cccc6523c11ff7c72128672c"><td class="memItemLeft" align="right" valign="top"><a id="a7556ad48cccc6523c11ff7c72128672c"></a>
-glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><b>m_contact2</b></td></tr>
+<tr class="memitem:a7556ad48cccc6523c11ff7c72128672c"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a7556ad48cccc6523c11ff7c72128672c">m_contact2</a></td></tr>
 <tr class="separator:a7556ad48cccc6523c11ff7c72128672c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4771cc360cca6867707b8b9e601d77c"><td class="memItemLeft" align="right" valign="top"><a id="aa4771cc360cca6867707b8b9e601d77c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_damping</b></td></tr>
+<tr class="memitem:aa4771cc360cca6867707b8b9e601d77c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#aa4771cc360cca6867707b8b9e601d77c">m_damping</a></td></tr>
 <tr class="separator:aa4771cc360cca6867707b8b9e601d77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a612ed8ef8bbdbb0bbe21039dd1b4786c"><td class="memItemLeft" align="right" valign="top"><a id="a612ed8ef8bbdbb0bbe21039dd1b4786c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_restLength</b></td></tr>
+<tr class="memitem:a612ed8ef8bbdbb0bbe21039dd1b4786c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a612ed8ef8bbdbb0bbe21039dd1b4786c">m_restLength</a></td></tr>
 <tr class="separator:a612ed8ef8bbdbb0bbe21039dd1b4786c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8c202b0a81a3bf358109a70f7fd460"><td class="memItemLeft" align="right" valign="top"><a id="a5b8c202b0a81a3bf358109a70f7fd460"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_springCoefficient</b></td></tr>
+<tr class="memitem:a5b8c202b0a81a3bf358109a70f7fd460"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spring.html#a5b8c202b0a81a3bf358109a70f7fd460">m_springCoefficient</a></td></tr>
 <tr class="separator:a5b8c202b0a81a3bf358109a70f7fd460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_physics_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_physics_object.html">PhysicsObject</a></td></tr>
-<tr class="memitem:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">const ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
+<tr class="memitem:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
 <tr class="memdesc:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type of shape this is. Can only be set by the initializer.  <a href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">More...</a><br /></td></tr>
 <tr class="separator:a765d2e70ca15ec011132e8718e610fe9 inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c0056c2efc3669e3498621d9d48b6a inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">m_elasticity</a></td></tr>
@@ -137,7 +131,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a020d7b3aa30df4c6eadb7daff1be5907 inherit pub_static_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to check and handle a potential collision between 2 different objects.  <a href="class_physics_object.html#a020d7b3aa30df4c6eadb7daff1be5907">More...</a><br /></td></tr>
 <tr class="separator:a020d7b3aa30df4c6eadb7daff1be5907 inherit pub_static_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_physics_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_physics_object.html">PhysicsObject</a></td></tr>
-<tr class="memitem:adb86f23215f13b0d53b14029a95efff3 inherit pro_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">PhysicsObject</a> (ShapeType shapeID)</td></tr>
+<tr class="memitem:adb86f23215f13b0d53b14029a95efff3 inherit pro_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">PhysicsObject</a> (<a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a> shapeID)</td></tr>
 <tr class="memdesc:adb86f23215f13b0d53b14029a95efff3 inherit pro_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to initialized this object and assign it an ID, which will be used for identifying it by other functions.  <a href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">More...</a><br /></td></tr>
 <tr class="separator:adb86f23215f13b0d53b14029a95efff3 inherit pro_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -232,9 +226,204 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a5d6a1b3ffce1aaee4c7ee28f71485f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6a1b3ffce1aaee4c7ee28f71485f05">&#9670;&nbsp;</a></span>fixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Spring::fixedUpdate </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec2&#160;</td>
+          <td class="paramname"><em>gravity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>timeStep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Physics update, called when each fixed time-step has elapsed as defined in <a class="el" href="class_physics_scene.html" title="A scene to be updated and rendered by PhysicsGame. Holds, updates and renders a collection of Physics...">PhysicsScene</a>. Must be overridden. </p>
+
+<p>Implements <a class="el" href="class_physics_object.html#a58ea286456823d7c7dfc1221701d16f8">PhysicsObject</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a686013a562bf1fb09989b701ceb2f94c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686013a562bf1fb09989b701ceb2f94c">&#9670;&nbsp;</a></span>m_body1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rigidbody.html">Rigidbody</a>* Spring::m_body1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3f1033990321808a28275cada250b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f1033990321808a28275cada250b9c">&#9670;&nbsp;</a></span>m_body2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rigidbody.html">Rigidbody</a>* Spring::m_body2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a729899a089c84dd4d8294a8f6783e30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729899a089c84dd4d8294a8f6783e30b">&#9670;&nbsp;</a></span>m_contact1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 Spring::m_contact1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7556ad48cccc6523c11ff7c72128672c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7556ad48cccc6523c11ff7c72128672c">&#9670;&nbsp;</a></span>m_contact2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 Spring::m_contact2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4771cc360cca6867707b8b9e601d77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4771cc360cca6867707b8b9e601d77c">&#9670;&nbsp;</a></span>m_damping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Spring::m_damping</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a612ed8ef8bbdbb0bbe21039dd1b4786c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612ed8ef8bbdbb0bbe21039dd1b4786c">&#9670;&nbsp;</a></span>m_restLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Spring::m_restLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b8c202b0a81a3bf358109a70f7fd460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8c202b0a81a3bf358109a70f7fd460">&#9670;&nbsp;</a></span>m_springCoefficient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Spring::m_springCoefficient</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/<a class="el" href="_spring_8h_source.html">Spring.h</a></li>
-<li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/Spring.cpp</li>
+<li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/<a class="el" href="_spring_8cpp.html">Spring.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

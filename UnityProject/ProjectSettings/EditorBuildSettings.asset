@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TerrainChairs.unity
+    guid: fe3ec452cb67a0b4ab24bbd615db02bd
   m_configObjects: {}

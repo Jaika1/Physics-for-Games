@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrbitalCamera : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class OrbitalCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         float dx = Input.GetAxis("Mouse Y") * Sensitivity;
         float dy = Input.GetAxis("Mouse X") * Sensitivity;
 

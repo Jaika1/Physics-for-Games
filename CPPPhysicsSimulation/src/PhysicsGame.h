@@ -38,7 +38,7 @@ public:
 	/// <summary>
 	/// Returns the current scene (if any is loaded).
 	/// </summary>
-	/// <param name="scene">The current scene being used by the game.</param>
+	/// <returns>The current scene being used by the game.</returns>
 	PhysicsScene* getScene() const;
 private:
 	/// <summary>

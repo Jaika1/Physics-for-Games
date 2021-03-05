@@ -32,10 +32,13 @@ public:
 	/// <param name="position">The position at which the collision occured.</param>
 	void applyForce(glm::vec2 force, glm::vec2 position);
 	/// <summary>
-	/// Resolves a collision between this body and another.
+	/// Resolves a collision between this body and another by applying contact and rotational forces accordingly, all while dealing with penetration.
 	/// </summary>
 	/// <param name="actor2">The other object of which the interaction occured with.</param>
-	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr, float pen = 0); // FILL IN SUMMARY
+	/// <param name="contact">The point at which contact between this actor and <paramref name="actor2"/> was made.</param>
+	/// <param name="collisionNormal">The normal vector for this collision between us and <paramref name="actor2"/>.</param>
+	/// <param name="pen">The amount <paramref name="actor2"/> has penetrated into this actors surface.</param>
+	void resolveCollision(Rigidbody* actor2, glm::vec2 contact, glm::vec2* collisionNormal = nullptr, float pen = 0);
 
 
 	/// <summary>
@@ -96,7 +99,7 @@ public:
 	/// <summary>
 	/// Converts the given local-space position to world space.
 	/// </summary>
-	/// <param name="position">The position to convert from local to world space.</param>
+	/// <param name="lpos">The position to convert from local to world space.</param>
 	/// <returns>The given postition represented in world-space.</returns>
 	glm::vec2 toWorld(glm::vec2 lpos) { return getPosition() + lpos; }
 

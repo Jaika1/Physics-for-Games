@@ -56,7 +56,7 @@ public:
 	/// <summary>
 	/// Changes the fixed time-step for this scene, which is the amount of time in seconds to pass before updating each actor.
 	/// </summary>
-	/// <param name="gravity">The new time-step.</param>
+	/// <param name="timeStep">The new time-step.</param>
 	void setTimeStep(const float timeStep) { m_timeStep = timeStep; }
 	/// <summary>
 	/// Used to retrieve the current time-step value. Modifying this value will not change the scenes time-step, use setTimeStep instead.

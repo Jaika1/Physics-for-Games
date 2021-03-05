@@ -115,13 +115,13 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:adb86f23215f13b0d53b14029a95efff3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">PhysicsObject</a> (ShapeType shapeID)</td></tr>
+<tr class="memitem:adb86f23215f13b0d53b14029a95efff3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">PhysicsObject</a> (<a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a> shapeID)</td></tr>
 <tr class="memdesc:adb86f23215f13b0d53b14029a95efff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to initialized this object and assign it an ID, which will be used for identifying it by other functions.  <a href="class_physics_object.html#adb86f23215f13b0d53b14029a95efff3">More...</a><br /></td></tr>
 <tr class="separator:adb86f23215f13b0d53b14029a95efff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a765d2e70ca15ec011132e8718e610fe9"><td class="memItemLeft" align="right" valign="top">const ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
+<tr class="memitem:a765d2e70ca15ec011132e8718e610fe9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">m_shapeID</a></td></tr>
 <tr class="memdesc:a765d2e70ca15ec011132e8718e610fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type of shape this is. Can only be set by the initializer.  <a href="class_physics_object.html#a765d2e70ca15ec011132e8718e610fe9">More...</a><br /></td></tr>
 <tr class="separator:a765d2e70ca15ec011132e8718e610fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c0056c2efc3669e3498621d9d48b6a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9c0056c2efc3669e3498621d9d48b6a">m_elasticity</a></td></tr>
@@ -160,8 +160,8 @@ Static Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:ab9b6411ad0f1a9883077fb3e752a4e85"><td class="memItemLeft" align="right" valign="top">static collisionCheck_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9b6411ad0f1a9883077fb3e752a4e85">collisionCheckFunctionArray</a> []</td></tr>
-<tr class="memdesc:ab9b6411ad0f1a9883077fb3e752a4e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of function pointers that is used to determine the function required for collision checks between 2 <a class="el" href="class_physics_object.html" title="Represents the most basic form of an object that can be placed in the world. Designed to be inherited...">PhysicsObject</a> instances.  <a href="class_physics_object.html#ab9b6411ad0f1a9883077fb3e752a4e85">More...</a><br /></td></tr>
+<tr class="memitem:ab9b6411ad0f1a9883077fb3e752a4e85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_physics_object_8h.html#ac0a251a3e57312f7d673e7106c186f78">collisionCheck_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics_object.html#ab9b6411ad0f1a9883077fb3e752a4e85">collisionCheckFunctionArray</a> []</td></tr>
+<tr class="memdesc:ab9b6411ad0f1a9883077fb3e752a4e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of function pointers that is used to determine the function required for collision checks between 2 <a class="el" href="class_physics_object.html" title="Represents the most basic form of an object that can be placed in the world. Designed to be inherited...">PhysicsObject</a> instances. Utilized by the checkCollision function, the ShapeType enumerator is used to determine which function to use between the 2 given actors.  <a href="class_physics_object.html#ab9b6411ad0f1a9883077fb3e752a4e85">More...</a><br /></td></tr>
 <tr class="separator:ab9b6411ad0f1a9883077fb3e752a4e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -179,7 +179,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">PhysicsObject::PhysicsObject </td>
           <td>(</td>
-          <td class="paramtype">ShapeType&#160;</td>
+          <td class="paramtype"><a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a>&#160;</td>
           <td class="paramname"><em>shapeID</em></td><td>)</td>
           <td></td>
         </tr>
@@ -804,7 +804,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">collisionCheck_t PhysicsObject::collisionCheckFunctionArray</td>
+          <td class="memname"><a class="el" href="_physics_object_8h.html#ac0a251a3e57312f7d673e7106c186f78">collisionCheck_t</a> PhysicsObject::collisionCheckFunctionArray</td>
         </tr>
       </table>
   </td>
@@ -820,7 +820,8 @@ Static Private Attributes</h2></td></tr>
 <div class="line">    &amp;<a class="code" href="class_physics_object.html#af66e118ec45f71243505ac1d50c82cb6">PhysicsObject::box2Plane</a>, &amp;<a class="code" href="class_physics_object.html#a1d78214810b7010c5a5dd130f65cc99e">PhysicsObject::box2Sphere</a>, &amp;<a class="code" href="class_physics_object.html#a4720f0745be19f4f3339fe489e158bd1">PhysicsObject::box2Box</a></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p>An array of function pointers that is used to determine the function required for collision checks between 2 <a class="el" href="class_physics_object.html" title="Represents the most basic form of an object that can be placed in the world. Designed to be inherited...">PhysicsObject</a> instances. </p>
+<p>An array of function pointers that is used to determine the function required for collision checks between 2 <a class="el" href="class_physics_object.html" title="Represents the most basic form of an object that can be placed in the world. Designed to be inherited...">PhysicsObject</a> instances. Utilized by the checkCollision function, the ShapeType enumerator is used to determine which function to use between the 2 given actors. </p>
+<dl class="section see"><dt>See also</dt><dd>enum ShapeType, <a class="el" href="class_physics_object.html#a020d7b3aa30df4c6eadb7daff1be5907" title="Used to check and handle a potential collision between 2 different objects.">PhysicsObject::checkCollision(PhysicsObject*, PhysicsObject*)</a></dd></dl>
 
 </div>
 </div>
@@ -858,7 +859,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const ShapeType PhysicsObject::m_shapeID</td>
+          <td class="memname">const <a class="el" href="_physics_object_8h.html#a5a4538eeab397888d88a4eefcc5a1345">ShapeType</a> PhysicsObject::m_shapeID</td>
         </tr>
       </table>
   </td>
@@ -874,7 +875,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/<a class="el" href="_physics_object_8h_source.html">PhysicsObject.h</a></li>
-<li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/PhysicsObject.cpp</li>
+<li>C:/Users/s200099/Documents/Physics for Games/CPPPhysicsSimulation/src/<a class="el" href="_physics_object_8cpp.html">PhysicsObject.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclass_physics_object_html_a01da813a91307401c7cc6a12d93079d9"><div class="ttname"><a href="class_physics_object.html#a01da813a91307401c7cc6a12d93079d9">PhysicsObject::plane2Plane</a></div><div class="ttdeci">static bool plane2Plane(PhysicsObject *actor1, PhysicsObject *actor2)</div><div class="ttdoc">This function will always return false since planes are always static. This function exists because t...</div><div class="ttdef"><b>Definition:</b> PhysicsObject.cpp:27</div></div>

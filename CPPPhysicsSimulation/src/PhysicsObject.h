@@ -71,7 +71,10 @@ public:
 private:
 	/// <summary>
 	/// An array of function pointers that is used to determine the function required for collision checks between 2 PhysicsObject instances.
+	/// Utilized by the checkCollision function, the ShapeType enumerator is used to determine which function to use between the 2 given actors.
 	/// </summary>
+	/// <seealso cref="enum ShapeType"/>
+	/// <seealso cref="PhysicsObject::checkCollision(PhysicsObject*, PhysicsObject*)"/>
 	static collisionCheck_t collisionCheckFunctionArray[];
 
 	#pragma region Collision Check Functions
